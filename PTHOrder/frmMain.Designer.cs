@@ -42,11 +42,14 @@
             this.cboThemes = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemComboBox5 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.btnStore = new DevExpress.XtraBars.BarButtonItem();
             this.imageLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.gStore = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repositoryItemComboBox3 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repositoryItemComboBox4 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -74,15 +77,17 @@
             this.btnLogOut,
             this.barEditItem1,
             this.cboThemes,
-            this.barSubItem1});
+            this.barSubItem1,
+            this.btnStore});
             this.ribbonControl1.LargeImages = this.imageLarge;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 25;
+            this.ribbonControl1.MaxItemId = 29;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.barSubItem1);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
-            this.ribbonPage2});
+            this.ribbonPage2,
+            this.ribbonPage3});
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1,
             this.repositoryItemComboBox2,
@@ -173,6 +178,16 @@
             this.barSubItem1.Id = 24;
             this.barSubItem1.Name = "barSubItem1";
             // 
+            // btnStore
+            // 
+            this.btnStore.Caption = "Kho Vật tư";
+            this.btnStore.Id = 28;
+            this.btnStore.LargeImageIndex = 6;
+            this.btnStore.LargeImageIndexDisabled = 6;
+            this.btnStore.LargeWidth = 90;
+            this.btnStore.Name = "btnStore";
+            this.btnStore.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStore_ItemClick);
+            // 
             // imageLarge
             // 
             this.imageLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -183,6 +198,7 @@
             this.imageLarge.Images.SetKeyName(3, "BO_Order_Item_32x32.png");
             this.imageLarge.Images.SetKeyName(4, "BO_User_32x32.png");
             this.imageLarge.Images.SetKeyName(5, "Action_ChooseSkin_32x32.png");
+            this.imageLarge.Images.SetKeyName(6, "Store.png");
             // 
             // ribbonPage1
             // 
@@ -203,13 +219,25 @@
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2});
             this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "Danh Mục";
+            this.ribbonPage2.Text = "Quản lý mua hàng";
             // 
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnListSupplier);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnListOrder, true);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.gStore});
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "Quản lý Kho";
+            // 
+            // gStore
+            // 
+            this.gStore.ItemLinks.Add(this.btnStore);
+            this.gStore.Name = "gStore";
             // 
             // repositoryItemComboBox2
             // 
@@ -283,6 +311,10 @@
         private DevExpress.XtraBars.BarEditItem cboThemes;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox5;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
+   
+        private DevExpress.XtraBars.BarButtonItem btnStore;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup gStore;
         private DevExpress.XtraSplashScreen.SplashScreenManager waiting;
 
 

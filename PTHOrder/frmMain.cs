@@ -129,17 +129,18 @@ namespace PTHOrder
             catch { }
         }
 
-       
+        private void btnStore_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            waiting.ShowWaitForm();
+            if (!IsFocusForm(typeof(Forms.frmListOrder), this))
+            {
+                Forms.frmStore frm = new Forms.frmStore();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            waiting.CloseWaitForm();
+        }
 
-    
-
-     
       
-
-      
-
-       
-
-       
     }
 }

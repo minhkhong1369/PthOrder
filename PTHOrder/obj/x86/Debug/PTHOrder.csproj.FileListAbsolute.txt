@@ -232,3 +232,5 @@ D:\Data\Pth_Project\Pth_Order\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.Propertie
 D:\Data\Pth_Project\Pth_Order\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.Reports.rptListOrder.resources
 D:\Data\Pth_Project\Pth_Order\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.csproj.GenerateResource.Cache
 D:\Data\Pth_Project\Pth_Order\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.exe.licenses
+D:\Data\Pth_Project\Pth_Order\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.Forms.frmStore.resources
+D:\Data\Pth_Project\Pth_Order\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.Forms.frmStore_Update.resources

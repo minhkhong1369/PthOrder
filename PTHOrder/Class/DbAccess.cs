@@ -9,7 +9,7 @@ namespace PTHOrder.Class
 {
     public class DbConnection
     {        
-        public static string svr = "./";
+        public static string svr = "192.168.1.28";
         public static string db = "PTHOrder";
         public static string user = "sa";
         public static string password = "sa";

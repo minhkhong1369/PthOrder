@@ -186,7 +186,7 @@
             this.colSupplierCode.Name = "colSupplierCode";
             this.colSupplierCode.Visible = true;
             this.colSupplierCode.VisibleIndex = 0;
-            this.colSupplierCode.Width = 72;
+            this.colSupplierCode.Width = 39;
             // 
             // colSupplierName
             // 
@@ -195,7 +195,7 @@
             this.colSupplierName.Name = "colSupplierName";
             this.colSupplierName.Visible = true;
             this.colSupplierName.VisibleIndex = 1;
-            this.colSupplierName.Width = 144;
+            this.colSupplierName.Width = 79;
             // 
             // colAddress
             // 
@@ -204,7 +204,7 @@
             this.colAddress.Name = "colAddress";
             this.colAddress.Visible = true;
             this.colAddress.VisibleIndex = 2;
-            this.colAddress.Width = 161;
+            this.colAddress.Width = 89;
             // 
             // colTelephone
             // 
@@ -213,7 +213,7 @@
             this.colTelephone.Name = "colTelephone";
             this.colTelephone.Visible = true;
             this.colTelephone.VisibleIndex = 3;
-            this.colTelephone.Width = 117;
+            this.colTelephone.Width = 64;
             // 
             // colMail
             // 
@@ -222,7 +222,7 @@
             this.colMail.Name = "colMail";
             this.colMail.Visible = true;
             this.colMail.VisibleIndex = 4;
-            this.colMail.Width = 126;
+            this.colMail.Width = 69;
             // 
             // colGroup
             // 
@@ -231,7 +231,7 @@
             this.colGroup.Name = "colGroup";
             this.colGroup.Visible = true;
             this.colGroup.VisibleIndex = 5;
-            this.colGroup.Width = 68;
+            this.colGroup.Width = 47;
             // 
             // colContact
             // 
@@ -240,7 +240,7 @@
             this.colContact.Name = "colContact";
             this.colContact.Visible = true;
             this.colContact.VisibleIndex = 6;
-            this.colContact.Width = 216;
+            this.colContact.Width = 114;
             // 
             // colNote
             // 
@@ -249,7 +249,7 @@
             this.colNote.Name = "colNote";
             this.colNote.Visible = true;
             this.colNote.VisibleIndex = 7;
-            this.colNote.Width = 247;
+            this.colNote.Width = 137;
             // 
             // gridItem
             // 
