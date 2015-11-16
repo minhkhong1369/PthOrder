@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStore));
             this.gridItem = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btn_Add = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Update = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Delete = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnExportFile = new System.Windows.Forms.ToolStripMenuItem();
             this.gridItemDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colStoreCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStoreName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,6 +52,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.imageSmall = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageSmall)).BeginInit();
@@ -54,13 +60,58 @@
             // 
             // gridItem
             // 
+            this.gridItem.AllowDrop = true;
+            this.gridItem.ContextMenuStrip = this.contextMenuStrip1;
             this.gridItem.Location = new System.Drawing.Point(12, 6);
             this.gridItem.MainView = this.gridItemDetail;
             this.gridItem.Name = "gridItem";
-            this.gridItem.Size = new System.Drawing.Size(658, 256);
+            this.gridItem.Size = new System.Drawing.Size(556, 220);
             this.gridItem.TabIndex = 0;
             this.gridItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridItemDetail});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_Add,
+            this.btn_Update,
+            this.btn_Delete,
+            this.btnExportFile});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 114);
+            // 
+            // btn_Add
+            // 
+            this.btn_Add.Image = global::PTHOrder.Properties.Resources.Action_LinkUnlink_Link;
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(152, 22);
+            this.btn_Add.Text = "Thêm ";
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_Update.Image = global::PTHOrder.Properties.Resources.Action_Edit_12x12;
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(152, 22);
+            this.btn_Update.Text = "Cập nhật";
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.Image = global::PTHOrder.Properties.Resources.Action_Delete_12x12;
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(152, 22);
+            this.btn_Delete.Text = "Xóa";
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            // 
+            // btnExportFile
+            // 
+            this.btnExportFile.Image = global::PTHOrder.Properties.Resources.Action_Export_ToExcel;
+            this.btnExportFile.Name = "btnExportFile";
+            this.btnExportFile.Size = new System.Drawing.Size(152, 22);
+            this.btnExportFile.Text = "Xuất file excel";
+            this.btnExportFile.Click += new System.EventHandler(this.btnExportFile_Click);
             // 
             // gridItemDetail
             // 
@@ -70,7 +121,12 @@
             this.colTelephone,
             this.colAddress});
             this.gridItemDetail.GridControl = this.gridItem;
+            this.gridItemDetail.IndicatorWidth = 40;
             this.gridItemDetail.Name = "gridItemDetail";
+            this.gridItemDetail.OptionsBehavior.Editable = false;
+            this.gridItemDetail.OptionsView.ShowGroupPanel = false;
+            this.gridItemDetail.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridItemDetail_CustomDrawRowIndicator);
+            this.gridItemDetail.DoubleClick += new System.EventHandler(this.gridItemDetail_DoubleClick);
             // 
             // colStoreCode
             // 
@@ -79,7 +135,7 @@
             this.colStoreCode.Name = "colStoreCode";
             this.colStoreCode.Visible = true;
             this.colStoreCode.VisibleIndex = 0;
-            this.colStoreCode.Width = 180;
+            this.colStoreCode.Width = 40;
             // 
             // colStoreName
             // 
@@ -88,7 +144,7 @@
             this.colStoreName.Name = "colStoreName";
             this.colStoreName.Visible = true;
             this.colStoreName.VisibleIndex = 1;
-            this.colStoreName.Width = 112;
+            this.colStoreName.Width = 44;
             // 
             // colTelephone
             // 
@@ -97,7 +153,7 @@
             this.colTelephone.Name = "colTelephone";
             this.colTelephone.Visible = true;
             this.colTelephone.VisibleIndex = 2;
-            this.colTelephone.Width = 114;
+            this.colTelephone.Width = 134;
             // 
             // colAddress
             // 
@@ -106,7 +162,7 @@
             this.colAddress.Name = "colAddress";
             this.colAddress.Visible = true;
             this.colAddress.VisibleIndex = 3;
-            this.colAddress.Width = 320;
+            this.colAddress.Width = 191;
             // 
             // barManager1
             // 
@@ -156,6 +212,7 @@
             this.btnEdit.Id = 1;
             this.btnEdit.ImageIndex = 1;
             this.btnEdit.Name = "btnEdit";
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
             // 
             // btnDelete
             // 
@@ -163,34 +220,35 @@
             this.btnDelete.Id = 2;
             this.btnDelete.ImageIndex = 2;
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete_ItemClick);
             // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(854, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(715, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 268);
-            this.barDockControlBottom.Size = new System.Drawing.Size(854, 27);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 229);
+            this.barDockControlBottom.Size = new System.Drawing.Size(715, 27);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 268);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 229);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(854, 0);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 268);
+            this.barDockControlRight.Location = new System.Drawing.Point(715, 0);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 229);
             // 
             // imageSmall
             // 
@@ -204,16 +262,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 295);
+            this.ClientSize = new System.Drawing.Size(715, 256);
             this.Controls.Add(this.gridItem);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmStore";
-            this.Text = "frmStore";
+            this.Text = "Danh mục kho hàng";
             this.Load += new System.EventHandler(this.frmStore_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageSmall)).EndInit();
@@ -239,5 +298,10 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.Utils.ImageCollection imageSmall;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem btn_Add;
+        private System.Windows.Forms.ToolStripMenuItem btn_Update;
+        private System.Windows.Forms.ToolStripMenuItem btn_Delete;
+        private System.Windows.Forms.ToolStripMenuItem btnExportFile;
     }
 }

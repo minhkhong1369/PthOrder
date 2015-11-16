@@ -167,6 +167,12 @@
     <Compile Include="Forms\frmChangepassword.Designer.cs">
       <DependentUpon>frmChangepassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmListMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmListMaterial.Designer.cs">
+      <DependentUpon>frmListMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmListOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\frmChangepassword.resx">
       <DependentUpon>frmChangepassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmListMaterial.resx">
+      <DependentUpon>frmListMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmListOrder.resx">
       <DependentUpon>frmListOrder.cs</DependentUpon>

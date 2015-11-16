@@ -20,6 +20,15 @@ namespace PTHOrder.Class
             db.CreateNewSqlCommand();
             return db.ExecuteDataTable(procname);
         }
+        //edit du lieu tu ma kho
+        public DataTable tbStore_GetbyCode()
+        {
+            string procname = "tbStore_GetbyCode";
+            DbAccess db = new DbAccess();
+            db.CreateNewSqlCommand();
+            db.AddParameter("@StoreCode", StoreCode);
+            return db.ExecuteDataTable(procname);
+        }
         //store chèn dữ liệu vào table
         public bool Insert()
         {

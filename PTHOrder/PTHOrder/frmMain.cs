@@ -132,9 +132,21 @@ namespace PTHOrder
         private void btnStore_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             waiting.ShowWaitForm();
-            if (!IsFocusForm(typeof(Forms.frmListOrder), this))
+            if (!IsFocusForm(typeof(Forms.frmStore), this))
             {
                 Forms.frmStore frm = new Forms.frmStore();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            waiting.CloseWaitForm();
+        }
+
+        private void btnListMaterial_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            waiting.ShowWaitForm();
+            if (!IsFocusForm(typeof(Forms.frmListMaterial), this))
+            {
+                Forms.frmListMaterial frm = new Forms.frmListMaterial();
                 frm.MdiParent = this;
                 frm.Show();
             }

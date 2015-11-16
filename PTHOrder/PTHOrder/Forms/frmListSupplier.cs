@@ -178,7 +178,9 @@ namespace PTHOrder.Forms
                 if (!indicatorIcon)
                     e.Info.ImageIndex = -1;
             }
-        }      
+        }
+
+            
         }    
 }
 

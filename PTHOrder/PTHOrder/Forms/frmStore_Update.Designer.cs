@@ -126,26 +126,29 @@
             this.btnExit.Size = new System.Drawing.Size(87, 34);
             this.btnExit.TabIndex = 15;
             this.btnExit.Text = "Đóng";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSaveNew
             // 
-            this.btnSaveNew.ImageIndex = 1;
+            this.btnSaveNew.ImageIndex = 0;
             this.btnSaveNew.ImageList = this.imageCollection1;
-            this.btnSaveNew.Location = new System.Drawing.Point(162, 125);
+            this.btnSaveNew.Location = new System.Drawing.Point(154, 125);
             this.btnSaveNew.Name = "btnSaveNew";
             this.btnSaveNew.Size = new System.Drawing.Size(112, 34);
             this.btnSaveNew.TabIndex = 14;
             this.btnSaveNew.Text = "Lưu && Thêm";
+            this.btnSaveNew.Click += new System.EventHandler(this.btnSaveNew_Click);
             // 
             // btnSave
             // 
-            this.btnSave.ImageIndex = 0;
+            this.btnSave.ImageIndex = 1;
             this.btnSave.ImageList = this.imageCollection1;
-            this.btnSave.Location = new System.Drawing.Point(56, 125);
+            this.btnSave.Location = new System.Drawing.Point(40, 125);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 34);
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Lưu && Đóng";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmStore_Update
             // 
@@ -163,8 +166,10 @@
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmStore_Update";
-            this.Text = "frmStore_Update";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cập nhật danh mục kho hàng";
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStoreCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelephone.Properties)).EndInit();

@@ -55,6 +55,7 @@
             this.repositoryItemComboBox4 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.waiting = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::PTHOrder.frmWaiting), true, true);
+            this.btnListMaterial = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox5)).BeginInit();
@@ -78,10 +79,11 @@
             this.barEditItem1,
             this.cboThemes,
             this.barSubItem1,
-            this.btnStore});
+            this.btnStore,
+            this.btnListMaterial});
             this.ribbonControl1.LargeImages = this.imageLarge;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 29;
+            this.ribbonControl1.MaxItemId = 30;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.barSubItem1);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -199,6 +201,7 @@
             this.imageLarge.Images.SetKeyName(4, "BO_User_32x32.png");
             this.imageLarge.Images.SetKeyName(5, "Action_ChooseSkin_32x32.png");
             this.imageLarge.Images.SetKeyName(6, "Store.png");
+            this.imageLarge.Images.SetKeyName(7, "Action_Search_Object_FindObjectByID_32x32.png");
             // 
             // ribbonPage1
             // 
@@ -237,6 +240,7 @@
             // gStore
             // 
             this.gStore.ItemLinks.Add(this.btnStore);
+            this.gStore.ItemLinks.Add(this.btnListMaterial, true);
             this.gStore.Name = "gStore";
             // 
             // repositoryItemComboBox2
@@ -263,6 +267,16 @@
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // btnListMaterial
+            // 
+            this.btnListMaterial.Caption = "Danh mục vật tư";
+            this.btnListMaterial.Id = 29;
+            this.btnListMaterial.LargeImageIndex = 7;
+            this.btnListMaterial.LargeImageIndexDisabled = 7;
+            this.btnListMaterial.LargeWidth = 90;
+            this.btnListMaterial.Name = "btnListMaterial";
+            this.btnListMaterial.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnListMaterial_ItemClick);
             // 
             // frmMain
             // 
@@ -315,6 +329,7 @@
         private DevExpress.XtraBars.BarButtonItem btnStore;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup gStore;
+        private DevExpress.XtraBars.BarButtonItem btnListMaterial;
         private DevExpress.XtraSplashScreen.SplashScreenManager waiting;
 
 
