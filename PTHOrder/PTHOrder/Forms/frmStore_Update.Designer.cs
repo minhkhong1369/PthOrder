@@ -62,35 +62,35 @@
             this.txtStoreCode.Location = new System.Drawing.Point(106, 13);
             this.txtStoreCode.Name = "txtStoreCode";
             this.txtStoreCode.Size = new System.Drawing.Size(119, 20);
-            this.txtStoreCode.TabIndex = 9;
+            this.txtStoreCode.TabIndex = 1;
             // 
             // txtTelephone
             // 
             this.txtTelephone.Location = new System.Drawing.Point(106, 65);
             this.txtTelephone.Name = "txtTelephone";
             this.txtTelephone.Size = new System.Drawing.Size(119, 20);
-            this.txtTelephone.TabIndex = 12;
+            this.txtTelephone.TabIndex = 3;
             // 
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(106, 91);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(238, 20);
-            this.txtAddress.TabIndex = 11;
+            this.txtAddress.TabIndex = 4;
             // 
             // txtStoreName
             // 
             this.txtStoreName.Location = new System.Drawing.Point(106, 39);
             this.txtStoreName.Name = "txtStoreName";
             this.txtStoreName.Size = new System.Drawing.Size(238, 20);
-            this.txtStoreName.TabIndex = 10;
+            this.txtStoreName.TabIndex = 2;
             // 
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(33, 44);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(43, 13);
-            this.labelControl3.TabIndex = 6;
+            this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "Tên Kho:";
             // 
             // labelControl8
@@ -98,7 +98,7 @@
             this.labelControl8.Location = new System.Drawing.Point(33, 72);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(55, 13);
-            this.labelControl8.TabIndex = 7;
+            this.labelControl8.TabIndex = 0;
             this.labelControl8.Text = "Điện Thoại:";
             // 
             // labelControl2
@@ -106,7 +106,7 @@
             this.labelControl2.Location = new System.Drawing.Point(33, 98);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(38, 13);
-            this.labelControl2.TabIndex = 8;
+            this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Địa Chỉ:";
             // 
             // labelControl1
@@ -114,7 +114,7 @@
             this.labelControl1.Location = new System.Drawing.Point(33, 18);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(39, 13);
-            this.labelControl1.TabIndex = 5;
+            this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Mã Kho:";
             // 
             // btnExit
@@ -124,7 +124,7 @@
             this.btnExit.Location = new System.Drawing.Point(272, 125);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(87, 34);
-            this.btnExit.TabIndex = 15;
+            this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Đóng";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -132,10 +132,10 @@
             // 
             this.btnSaveNew.ImageIndex = 0;
             this.btnSaveNew.ImageList = this.imageCollection1;
-            this.btnSaveNew.Location = new System.Drawing.Point(154, 125);
+            this.btnSaveNew.Location = new System.Drawing.Point(165, 125);
             this.btnSaveNew.Name = "btnSaveNew";
-            this.btnSaveNew.Size = new System.Drawing.Size(112, 34);
-            this.btnSaveNew.TabIndex = 14;
+            this.btnSaveNew.Size = new System.Drawing.Size(101, 34);
+            this.btnSaveNew.TabIndex = 6;
             this.btnSaveNew.Text = "Lưu && Thêm";
             this.btnSaveNew.Click += new System.EventHandler(this.btnSaveNew_Click);
             // 
@@ -143,10 +143,10 @@
             // 
             this.btnSave.ImageIndex = 1;
             this.btnSave.ImageList = this.imageCollection1;
-            this.btnSave.Location = new System.Drawing.Point(40, 125);
+            this.btnSave.Location = new System.Drawing.Point(60, 125);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(108, 34);
-            this.btnSave.TabIndex = 13;
+            this.btnSave.Size = new System.Drawing.Size(99, 34);
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Lưu && Đóng";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 

@@ -354,3 +354,4 @@ D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.Reports.rptListOrder
 D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.csproj.GenerateResource.Cache
 D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.exe.licenses
 D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.Forms.frmListMaterial.resources
+D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.Forms.frmListMaterial_Update.resources

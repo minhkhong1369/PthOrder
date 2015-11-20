@@ -10,9 +10,7 @@ using DevExpress.XtraEditors;
 namespace PTHOrder.Forms
 {
     public partial class frmStore_Update : DevExpress.XtraEditors.XtraForm
-    {
-        //private string code;
-        
+    {      
         public frmStore_Update()
         {
             InitializeComponent();
@@ -21,10 +19,8 @@ namespace PTHOrder.Forms
         }
         bool statusForm = true;
         public frmStore_Update(string code)
-        {
-            // TODO: Complete member initialization
-            InitializeComponent();
-            //this.code = code;
+        {  
+            InitializeComponent();    
             statusForm = false;
             Class.clsStore cls = new Class.clsStore();
             cls.StoreCode = code;
@@ -39,9 +35,6 @@ namespace PTHOrder.Forms
                 
             }
             this.Text = "Cập nhật kho hàng:  " + dt.Rows[0]["StoreName"].ToString();
-
-
-
         }
 
         private void btnSaveNew_Click(object sender, EventArgs e)
