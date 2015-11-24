@@ -15,11 +15,14 @@ namespace PTHOrder.Forms
 {
     public partial class frmListOrder_Update : DevExpress.XtraEditors.XtraForm
     {
+        string lbstatus;
         public frmListOrder_Update()
         {
             InitializeComponent();
             statusForm = true;
             this.Text = "Thêm mới đơn đặt hàng";
+            lbstatus = "Thêm mới";
+            lblChoose.Text = "Tình trạng đang: <b>[" + lbstatus.ToString() + "]</b>";
             LoadListSupplier();
             LoadOrderDetails();
             dateSuggestDate.DateTime = DateTime.Now;
@@ -31,6 +34,8 @@ namespace PTHOrder.Forms
             InitializeComponent();
             LoadListSupplier();
             statusForm = false;
+            lbstatus = "Chỉnh sửa";
+            lblChoose.Text = "Tình trạng đang: <b>[" + lbstatus.ToString() + "]</b>";
             Class.clsListOrder cls = new Class.clsListOrder();
             cls.OrderCode = code;
             DataTable dt = cls.tbOrder_Get();
@@ -132,12 +137,12 @@ namespace PTHOrder.Forms
                 }
                 if (cls.Insert(dtOrderDetail))
                 {
-                    MessageBox.Show("Thêm thành công");
+                    MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm thất bại");
+                    MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                 }
             }
             else
@@ -154,12 +159,12 @@ namespace PTHOrder.Forms
                 cls.CurrencyUnit = cboCurrencyUnit.Text;
                 if (cls.Update(dtOrderDetail,dtOrderDetailTemp))
                 {
-                    MessageBox.Show("Sửa thành công");
+                    MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Sửa thất bại");
+                    MessageBox.Show("Sửa thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                 }
 
             }
@@ -218,13 +223,14 @@ namespace PTHOrder.Forms
                         }
                         if (cls.Insert(dtOrderDetail))
                         {
-                            MessageBox.Show("Thêm thành công");
+                            MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                             AutoOrderCode();
                             //  this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("Thêm thất bại");
+                            MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
+
                         }
                     }
             }
@@ -242,13 +248,13 @@ namespace PTHOrder.Forms
                 cls.CurrencyUnit = cboCurrencyUnit.Text;
                 if (cls.Update(dtOrderDetail,dtOrderDetailTemp))
                 {
-                    MessageBox.Show("Sửa thành công");
+                    MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                     AutoOrderCode();
                     //this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Sửa thất bại");
+                    MessageBox.Show("Sửa thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                 }
 
             }
@@ -350,6 +356,8 @@ namespace PTHOrder.Forms
        void Addnew()
         {
             this.Text = "Thêm mới đơn đặt hàng";
+            lbstatus = "Thêm mới";
+            lblChoose.Text = "Tình trạng đang: <b>[" + lbstatus.ToString() + "]</b>";
             txtOrderCode.Enabled = true;
             dateSuggestDate.DateTime = DateTime.Now;
             this.cboFollowers.Text="";

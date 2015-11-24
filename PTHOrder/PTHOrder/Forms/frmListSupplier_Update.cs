@@ -11,17 +11,22 @@ namespace PTHOrder.Forms
 {
     public partial class frmListSupplier_Update : DevExpress.XtraEditors.XtraForm
     {
+        string lbstatus;
         public frmListSupplier_Update()
         {
             InitializeComponent();
             statusForm = true;//form o tinh trang them moi
             this.Text = "Thêm mới nhà cung cấp";
+            lbstatus = "Thêm mới";
+            lblChoose.Text = "Tình trạng đang: <b>[" + lbstatus.ToString() + "]</b>";
         }
         bool statusForm= true;
         public frmListSupplier_Update(string code)
         {
             InitializeComponent();
             statusForm = false;//form o tinh trang update
+            lbstatus = "Chỉnh sửa";
+            lblChoose.Text = "Tình trạng đang: <b>[" + lbstatus.ToString() + "]</b>";
             Class.clsListSupplier cls = new Class.clsListSupplier();
             cls.SupplierCode = code;
             DataTable dt = cls.tbSupplier_Get();
@@ -84,12 +89,12 @@ namespace PTHOrder.Forms
                 cls.Note = txtNote.Text;
                 if (cls.Insert())
                 {
-                    MessageBox.Show("Thêm thành công");
+                    MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                     //this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm thất bại");
+                    MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                     return;
                 }
             }
@@ -106,12 +111,12 @@ namespace PTHOrder.Forms
                 cls.Note = txtNote.Text;
                 if (cls.Update())
                 {
-                    MessageBox.Show("Sửa thành công");
+                    MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                    // this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Sửa thất bại");
+                    MessageBox.Show("Sửa thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                     return;
                 }
             }
@@ -156,12 +161,12 @@ namespace PTHOrder.Forms
                             cls.Note = txtNote.Text;
                             if (cls.Insert())
                             {
-                                MessageBox.Show("Thêm thành công");
+                                MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                                 this.Close();
                             }
                             else
                             {
-                                MessageBox.Show("Thêm thất bại");
+                                MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                             }
                         }
                         else
@@ -177,12 +182,12 @@ namespace PTHOrder.Forms
                             cls.Note = txtNote.Text;
                             if (cls.Update())
                             {
-                                MessageBox.Show("Sửa thành công");
+                                MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                                 this.Close();
                             }
                             else
                             {
-                                MessageBox.Show("Sửa thất bại");
+                                MessageBox.Show("Sửa thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                             }
 
                         }                  
@@ -190,6 +195,8 @@ namespace PTHOrder.Forms
         void Addnew()
         {
             this.Text = "Thêm mới nhà cung cấp";
+            lbstatus = "Thêm mới";
+            lblChoose.Text = "Tình trạng đang: <b>[" + lbstatus.ToString() + "]</b>";
             txtSupplierCode.Enabled = true;
             this.txtSupplierCode.Text = "";
             this.txtSupplierName.Text = "";

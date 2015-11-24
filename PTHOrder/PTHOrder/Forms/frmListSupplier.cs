@@ -44,7 +44,7 @@ namespace PTHOrder.Forms
             
             if (gridItemDetail.FocusedRowHandle > -1)
             {
-                waiting.ShowWaitForm();
+              
                 string code = gridItemDetail.GetFocusedRowCellValue(colSupplierCode).ToString();
                 Class.clsListSupplier cls = new Class.clsListSupplier();
                 cls.SupplierCode = code;
@@ -55,7 +55,7 @@ namespace PTHOrder.Forms
                 {
                     if (dt.Rows[i]["SupplierCode"].ToString() == cls.SupplierCode)
                     {
-                        MessageBox.Show("Nhà cung cấp này đang còn đơn hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Nhà cung cấp này đang có đơn hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                 }
@@ -76,7 +76,7 @@ namespace PTHOrder.Forms
                             }
                 }
             }
-            waiting.CloseWaitForm();
+           
         }
       
         //Xử lý nút sửa

@@ -69,6 +69,12 @@
             this.cboFollowers = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cboCurrencyUnit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.lblChoose = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPlaceOfDelivery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentConditions.Properties)).BeginInit();
@@ -86,11 +92,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboFollowers.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboCurrencyUnit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(37, 18);
+            this.labelControl1.Location = new System.Drawing.Point(37, 60);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(90, 13);
             this.labelControl1.TabIndex = 0;
@@ -98,7 +108,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(57, 44);
+            this.labelControl2.Location = new System.Drawing.Point(57, 86);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(70, 13);
             this.labelControl2.TabIndex = 0;
@@ -106,7 +116,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(54, 69);
+            this.labelControl3.Location = new System.Drawing.Point(54, 111);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(73, 13);
             this.labelControl3.TabIndex = 0;
@@ -114,7 +124,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(33, 95);
+            this.labelControl4.Location = new System.Drawing.Point(33, 137);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(94, 13);
             this.labelControl4.TabIndex = 0;
@@ -122,7 +132,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(74, 121);
+            this.labelControl5.Location = new System.Drawing.Point(74, 163);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(53, 13);
             this.labelControl5.TabIndex = 0;
@@ -130,7 +140,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(56, 147);
+            this.labelControl6.Location = new System.Drawing.Point(56, 189);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(71, 13);
             this.labelControl6.TabIndex = 0;
@@ -138,7 +148,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(18, 177);
+            this.labelControl7.Location = new System.Drawing.Point(18, 219);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(109, 13);
             this.labelControl7.TabIndex = 0;
@@ -146,7 +156,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(77, 203);
+            this.labelControl8.Location = new System.Drawing.Point(77, 245);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(50, 13);
             this.labelControl8.TabIndex = 0;
@@ -154,7 +164,7 @@
             // 
             // txtOrderCode
             // 
-            this.txtOrderCode.Location = new System.Drawing.Point(151, 11);
+            this.txtOrderCode.Location = new System.Drawing.Point(151, 53);
             this.txtOrderCode.Name = "txtOrderCode";
             this.txtOrderCode.Properties.ReadOnly = true;
             this.txtOrderCode.Size = new System.Drawing.Size(277, 20);
@@ -162,14 +172,14 @@
             // 
             // txtPlaceOfDelivery
             // 
-            this.txtPlaceOfDelivery.Location = new System.Drawing.Point(151, 140);
+            this.txtPlaceOfDelivery.Location = new System.Drawing.Point(151, 182);
             this.txtPlaceOfDelivery.Name = "txtPlaceOfDelivery";
             this.txtPlaceOfDelivery.Size = new System.Drawing.Size(277, 20);
             this.txtPlaceOfDelivery.TabIndex = 6;
             // 
             // txtPaymentConditions
             // 
-            this.txtPaymentConditions.Location = new System.Drawing.Point(151, 170);
+            this.txtPaymentConditions.Location = new System.Drawing.Point(151, 212);
             this.txtPaymentConditions.Name = "txtPaymentConditions";
             this.txtPaymentConditions.Size = new System.Drawing.Size(129, 20);
             this.txtPaymentConditions.TabIndex = 7;
@@ -177,7 +187,7 @@
             // txtVAT
             // 
             this.txtVAT.EditValue = ((short)(10));
-            this.txtVAT.Location = new System.Drawing.Point(151, 196);
+            this.txtVAT.Location = new System.Drawing.Point(151, 238);
             this.txtVAT.Name = "txtVAT";
             this.txtVAT.Size = new System.Drawing.Size(28, 20);
             this.txtVAT.TabIndex = 8;
@@ -187,9 +197,9 @@
             // 
             this.btnSave.ImageIndex = 1;
             this.btnSave.ImageList = this.imageCollection1;
-            this.btnSave.Location = new System.Drawing.Point(330, 392);
+            this.btnSave.Location = new System.Drawing.Point(350, 496);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(106, 38);
+            this.btnSave.Size = new System.Drawing.Size(99, 30);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Lưu && Đóng";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -206,9 +216,9 @@
             // 
             this.btnSaveNew.ImageIndex = 0;
             this.btnSaveNew.ImageList = this.imageCollection1;
-            this.btnSaveNew.Location = new System.Drawing.Point(436, 392);
+            this.btnSaveNew.Location = new System.Drawing.Point(456, 497);
             this.btnSaveNew.Name = "btnSaveNew";
-            this.btnSaveNew.Size = new System.Drawing.Size(107, 38);
+            this.btnSaveNew.Size = new System.Drawing.Size(99, 30);
             this.btnSaveNew.TabIndex = 11;
             this.btnSaveNew.Text = "Lưu && Thêm";
             this.btnSaveNew.Click += new System.EventHandler(this.btnSaveNew_Click);
@@ -217,9 +227,9 @@
             // 
             this.btnExit.ImageIndex = 2;
             this.btnExit.ImageList = this.imageCollection1;
-            this.btnExit.Location = new System.Drawing.Point(543, 392);
+            this.btnExit.Location = new System.Drawing.Point(563, 497);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(81, 38);
+            this.btnExit.Size = new System.Drawing.Size(70, 30);
             this.btnExit.TabIndex = 12;
             this.btnExit.Text = "Đóng";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -227,7 +237,7 @@
             // dateSuggestDate
             // 
             this.dateSuggestDate.EditValue = null;
-            this.dateSuggestDate.Location = new System.Drawing.Point(151, 37);
+            this.dateSuggestDate.Location = new System.Drawing.Point(151, 79);
             this.dateSuggestDate.Name = "dateSuggestDate";
             this.dateSuggestDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -239,7 +249,7 @@
             // dateDeliveryDate
             // 
             this.dateDeliveryDate.EditValue = null;
-            this.dateDeliveryDate.Location = new System.Drawing.Point(151, 114);
+            this.dateDeliveryDate.Location = new System.Drawing.Point(151, 156);
             this.dateDeliveryDate.Name = "dateDeliveryDate";
             this.dateDeliveryDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -251,7 +261,7 @@
             // cboSupplier
             // 
             this.cboSupplier.EnterMoveNextControl = true;
-            this.cboSupplier.Location = new System.Drawing.Point(151, 88);
+            this.cboSupplier.Location = new System.Drawing.Point(151, 130);
             this.cboSupplier.Name = "cboSupplier";
             this.cboSupplier.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
@@ -293,13 +303,13 @@
             // 
             // gridItem
             // 
-            this.gridItem.Location = new System.Drawing.Point(12, 228);
+            this.gridItem.Location = new System.Drawing.Point(12, 287);
             this.gridItem.MainView = this.gridItemDetail;
             this.gridItem.Name = "gridItem";
             this.gridItem.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
             this.repositoryItemCalcEdit1});
-            this.gridItem.Size = new System.Drawing.Size(612, 158);
+            this.gridItem.Size = new System.Drawing.Size(621, 199);
             this.gridItem.TabIndex = 9;
             this.gridItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridItemDetail});
@@ -420,7 +430,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(181, 199);
+            this.labelControl9.Location = new System.Drawing.Point(181, 241);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(11, 13);
             this.labelControl9.TabIndex = 14;
@@ -429,7 +439,7 @@
             // cboFollowers
             // 
             this.cboFollowers.EnterMoveNextControl = true;
-            this.cboFollowers.Location = new System.Drawing.Point(151, 62);
+            this.cboFollowers.Location = new System.Drawing.Point(151, 104);
             this.cboFollowers.Name = "cboFollowers";
             this.cboFollowers.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -443,7 +453,7 @@
             // 
             this.cboCurrencyUnit.EditValue = "VNĐ";
             this.cboCurrencyUnit.EnterMoveNextControl = true;
-            this.cboCurrencyUnit.Location = new System.Drawing.Point(343, 170);
+            this.cboCurrencyUnit.Location = new System.Drawing.Point(343, 212);
             this.cboCurrencyUnit.Name = "cboCurrencyUnit";
             this.cboCurrencyUnit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -455,17 +465,88 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(291, 176);
+            this.labelControl10.Location = new System.Drawing.Point(291, 218);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(44, 13);
             this.labelControl10.TabIndex = 18;
             this.labelControl10.Text = "Loại tiền:";
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.panelControl1.Appearance.Options.UseBackColor = true;
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.labelControl11);
+            this.panelControl1.Controls.Add(this.lblChoose);
+            this.panelControl1.Controls.Add(this.labelControl12);
+            this.panelControl1.Location = new System.Drawing.Point(-2, -2);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(654, 45);
+            this.panelControl1.TabIndex = 19;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.labelControl11.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl11.Location = new System.Drawing.Point(83, 7);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(233, 19);
+            this.labelControl11.TabIndex = 0;
+            this.labelControl11.Text = "DANH SÁCH ĐƠN ĐẶT HÀNG";
+            // 
+            // lblChoose
+            // 
+            this.lblChoose.AllowHtmlString = true;
+            this.lblChoose.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.lblChoose.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblChoose.Location = new System.Drawing.Point(245, 26);
+            this.lblChoose.Name = "lblChoose";
+            this.lblChoose.Size = new System.Drawing.Size(71, 14);
+            this.lblChoose.TabIndex = 0;
+            this.lblChoose.Text = "Tình trạng:[]";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl12.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl12.Location = new System.Drawing.Point(16, 10);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(56, 17);
+            this.labelControl12.TabIndex = 0;
+            this.labelControl12.Text = "Cập nhật";
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelControl2.Appearance.Options.UseBackColor = true;
+            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl2.Controls.Add(this.labelControl13);
+            this.panelControl2.Location = new System.Drawing.Point(12, 264);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(621, 23);
+            this.panelControl2.TabIndex = 20;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl13.Location = new System.Drawing.Point(6, 4);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(117, 13);
+            this.labelControl13.TabIndex = 0;
+            this.labelControl13.Text = "Chi tiết đơn đặt hàng";
+            // 
             // frmListOrder_Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 436);
+            this.ClientSize = new System.Drawing.Size(650, 547);
+            this.Controls.Add(this.panelControl2);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.cboCurrencyUnit);
             this.Controls.Add(this.cboFollowers);
@@ -511,6 +592,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboFollowers.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboCurrencyUnit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            this.panelControl2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -556,5 +643,11 @@
         private DevExpress.XtraEditors.ComboBoxEdit cboFollowers;
         private DevExpress.XtraEditors.ComboBoxEdit cboCurrencyUnit;
         private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.LabelControl lblChoose;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
     }
 }

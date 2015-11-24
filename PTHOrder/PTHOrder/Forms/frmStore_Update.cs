@@ -10,18 +10,23 @@ using DevExpress.XtraEditors;
 namespace PTHOrder.Forms
 {
     public partial class frmStore_Update : DevExpress.XtraEditors.XtraForm
-    {      
+    {
+        string lbstatus;
         public frmStore_Update()
         {
             InitializeComponent();
             statusForm = true;//form o tinh trang them moi
             this.Text = "Thêm mới kho hàng";
+            lbstatus = "Thêm mới";
+            lblChoose.Text = "Tình trạng đang: <b>[" + lbstatus.ToString() + "]</b>";
         }
         bool statusForm = true;
         public frmStore_Update(string code)
         {  
             InitializeComponent();    
             statusForm = false;
+            lbstatus = "Chỉnh sửa";
+            lblChoose.Text = "Tình trạng đang: <b>[" + lbstatus.ToString() + "]</b>";
             Class.clsStore cls = new Class.clsStore();
             cls.StoreCode = code;
             DataTable dt = cls.tbStore_GetbyCode();
@@ -75,12 +80,14 @@ namespace PTHOrder.Forms
                
                 if (cls.Insert())
                 {
-                    MessageBox.Show("Thêm thành công");
+                    MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     //this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm thất bại");
+                    MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     return;
                 }
             }
@@ -94,12 +101,14 @@ namespace PTHOrder.Forms
               
                 if (cls.Update())
                 {
-                    MessageBox.Show("Sửa thành công");
+                    MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     // this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Sửa thất bại");
+                    MessageBox.Show("Sửa thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     return;
                 }
             }
@@ -109,6 +118,8 @@ namespace PTHOrder.Forms
         void Addnew()
         {
             this.Text = "Thêm mới kho hàng";
+            lbstatus = "Thêm mới";
+            lblChoose.Text = "Tình trạng đang: <b>[" + lbstatus.ToString() + "]</b>";
             txtStoreCode.Enabled = true;
             this.txtStoreCode.Text = "";
             this.txtStoreName.Text = "";
@@ -156,12 +167,14 @@ namespace PTHOrder.Forms
 
                 if (cls.Insert())
                 {
-                    MessageBox.Show("Thêm thành công");
-                    //this.Close();
+                    MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm thất bại");
+                    MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     return;
                 }
             }
@@ -175,12 +188,14 @@ namespace PTHOrder.Forms
 
                 if (cls.Update())
                 {
-                    MessageBox.Show("Sửa thành công");
-                    // this.Close();
+                    MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Sửa thất bại");
+                    MessageBox.Show("Sửa thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     return;
                 }
             }
