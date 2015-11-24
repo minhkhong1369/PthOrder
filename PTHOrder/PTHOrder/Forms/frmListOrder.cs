@@ -507,6 +507,11 @@ namespace PTHOrder.Forms
                         e.Info.ImageIndex = -1;
                 }
             }
+
+            private void gridItemDetail_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+            {
+                lblChoose.Text = "Đang chọn:[<b>" + gridItemDetail.GetFocusedRowCellValue(colOrderCode).ToString() + "</b>]";
+            }
           }          
  }
 

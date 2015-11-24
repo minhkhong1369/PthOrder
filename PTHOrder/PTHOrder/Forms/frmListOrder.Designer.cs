@@ -66,11 +66,17 @@
             this.colSupplierName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.waiting = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::PTHOrder.frmWaiting), true, true);
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.lblChoose = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageSmall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // barManager1
@@ -169,12 +175,14 @@
             // 
             // gridItem
             // 
+            this.gridItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.gridItem.ContextMenuStrip = this.contextMenuStrip1;
-            this.gridItem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridItem.Location = new System.Drawing.Point(0, 0);
+            this.gridItem.Location = new System.Drawing.Point(0, 52);
             this.gridItem.MainView = this.gridItemDetail;
             this.gridItem.Name = "gridItem";
-            this.gridItem.Size = new System.Drawing.Size(746, 317);
+            this.gridItem.Size = new System.Drawing.Size(746, 265);
             this.gridItem.TabIndex = 4;
             this.gridItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridItemDetail});
@@ -290,6 +298,7 @@
             // 
             // gridItemDetail
             // 
+            this.gridItemDetail.ColumnPanelRowHeight = 25;
             this.gridItemDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colOrderCode,
             this.colDateSuggest,
@@ -309,6 +318,7 @@
             this.gridItemDetail.OptionsView.ColumnAutoWidth = false;
             this.gridItemDetail.OptionsView.ShowGroupPanel = false;
             this.gridItemDetail.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridItemDetail_CustomDrawRowIndicator);
+            this.gridItemDetail.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridItemDetail_FocusedRowChanged);
             this.gridItemDetail.DoubleClick += new System.EventHandler(this.gridItemDetail_DoubleClick);
             // 
             // colOrderCode
@@ -399,11 +409,58 @@
             this.colStatus.VisibleIndex = 8;
             this.colStatus.Width = 66;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.panelControl1.Appearance.Options.UseBackColor = true;
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.lblChoose);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Location = new System.Drawing.Point(0, -2);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(753, 55);
+            this.panelControl1.TabIndex = 9;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl2.Location = new System.Drawing.Point(82, 9);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(155, 23);
+            this.labelControl2.TabIndex = 0;
+            this.labelControl2.Text = "ĐƠN ĐẶT HÀNG";
+            // 
+            // lblChoose
+            // 
+            this.lblChoose.AllowHtmlString = true;
+            this.lblChoose.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.lblChoose.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblChoose.Location = new System.Drawing.Point(148, 34);
+            this.lblChoose.Name = "lblChoose";
+            this.lblChoose.Size = new System.Drawing.Size(73, 14);
+            this.lblChoose.TabIndex = 0;
+            this.lblChoose.Text = "Đang chọn:[]";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl1.Location = new System.Drawing.Point(15, 14);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(59, 16);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Danh sách";
+            // 
             // frmListOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 344);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gridItem);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -418,6 +475,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -460,5 +520,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private DevExpress.XtraSplashScreen.SplashScreenManager waiting;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl lblChoose;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

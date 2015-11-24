@@ -118,25 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PTH_color1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PTH_color1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Action_Export_ToExcel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Action_Export_ToExcel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Action_LinkUnlink_Link" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Action_LinkUnlink_Link.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Action_Edit_12x12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Action_Edit_12x12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ModelEditor_GoToObject" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ModelEditor_GoToObject.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Action_AboutInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Action_AboutInfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PTH_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PTH_color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Action_Delete_12x12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Action_Delete_12x12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Action_AboutInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Action_AboutInfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ModelEditor_GoToObject" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelEditor_GoToObject.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Action_Printing_Print" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Action_Printing_Print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Action_Export_ToExcel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Action_Export_ToExcel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PTH_color2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PTH_color2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

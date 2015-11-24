@@ -61,7 +61,7 @@ namespace PTHOrder.Forms
                 DataTable dt = cls.tbStore_GetList();
                 for (int i = 0; i <= dt.Rows.Count - 1; i++)
 
-                    if (dt.Rows[i]["StoreCode"].ToString() == txtStoreCode.Text)
+                    if (dt.Rows[i]["StoreCode"].ToString().ToLower() == txtStoreCode.Text.ToLower())
                     {
                         MessageBox.Show("Đã tồn tại kho hàng này !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtStoreCode.Focus();
@@ -142,7 +142,7 @@ namespace PTHOrder.Forms
                 DataTable dt = cls.tbStore_GetList();
                 for (int i = 0; i <= dt.Rows.Count - 1; i++)
 
-                    if (dt.Rows[i]["StoreCode"].ToString() == txtStoreCode.Text)
+                    if (dt.Rows[i]["StoreCode"].ToString().ToLower() == txtStoreCode.Text.ToLower())
                     {
                         MessageBox.Show("Đã tồn tại kho hàng này !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtStoreCode.Focus();

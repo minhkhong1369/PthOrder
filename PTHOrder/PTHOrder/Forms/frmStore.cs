@@ -164,6 +164,11 @@ namespace PTHOrder.Forms
                 }
             }
         }
+
+        private void gridItemDetail_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            lblChoose.Text = "Đang chọn:[<b>" + gridItemDetail.GetFocusedRowCellValue(colStoreName).ToString() + "</b>]";
+        }
         
     }
 }
