@@ -21,6 +21,8 @@ namespace PTHOrder.Class
         public string Status { get; set; }
         //khai báo biến các Feild của table tbOrderDetails
         public int OrderDetailCode { get; set; }
+        public string MaterialCode { get; set; }
+        //public string MaterialName { get; set; }
         public string Describe { get; set; }
         public int Number { get; set; }
         public string Unit { get; set; }
@@ -71,6 +73,14 @@ namespace PTHOrder.Class
             db.AddParameter("@OrderCode", OrderCode);
             return db.ExecuteDataTable(procname);
         }
+        //Store lấy tổng số lượng chi tiết đơn hàng
+        public DataTable tbOrderDetails_Get_SumTotal()
+        {
+            string procname = "tbOrderDetails_Get_SumTotal";
+            DbAccess db = new DbAccess();
+            db.CreateNewSqlCommand();
+            return db.ExecuteDataTable(procname);
+        }
         //store chèn dữ liệu vào table
         public bool Insert(DataTable dtOrderDetail)
         {
@@ -92,6 +102,8 @@ namespace PTHOrder.Class
                 db.ExecuteNonQueryWithTransaction("tbOrder_Insert");//thực thi store chèn
                 for (int i = 0; i < dtOrderDetail.Rows.Count; i++)
                 {                   
+                    MaterialCode=dtOrderDetail.Rows[i]["MaterialCode"].ToString();
+                   // MaterialName = dtOrderDetail.Rows[i]["MaterialName"].ToString();
                     Describe = dtOrderDetail.Rows[i]["Describe"].ToString();
                     Number = int.Parse(dtOrderDetail.Rows[i]["Number"].ToString());
                     Unit = dtOrderDetail.Rows[i]["Unit"].ToString();
@@ -106,6 +118,8 @@ namespace PTHOrder.Class
                     SupplierSuggest = dtOrderDetail.Rows[i]["SupplierSuggest"].ToString();
                     db.CreateNewSqlCommand();
                     db.AddParameter("@OrderCode", OrderCode);
+                    db.AddParameter("@MaterialCode", MaterialCode);
+                  //  db.AddParameter("@MaterialName", MaterialName);
                     db.AddParameter("@Describe", Describe);
                     db.AddParameter("@Number", Number);
                     db.AddParameter("@Unit", Unit);
@@ -151,6 +165,8 @@ namespace PTHOrder.Class
                 {
                     if (dtOrderDetail.Rows[i]["OrderDetailCode"] == DBNull.Value)//dua vao OrderDetailCode de them or sua
                     {
+                        MaterialCode = dtOrderDetail.Rows[i]["MaterialCode"].ToString();
+                       // MaterialName = dtOrderDetail.Rows[i]["MaterialName"].ToString();
                         Describe = dtOrderDetail.Rows[i]["Describe"].ToString();
                         Number = int.Parse(dtOrderDetail.Rows[i]["Number"].ToString());
                         Unit = dtOrderDetail.Rows[i]["Unit"].ToString();
@@ -166,6 +182,8 @@ namespace PTHOrder.Class
                         SupplierSuggest = dtOrderDetail.Rows[i]["SupplierSuggest"].ToString();
                         db.CreateNewSqlCommand();
                         db.AddParameter("@OrderCode", OrderCode);
+                        db.AddParameter("@MaterialCode", MaterialCode);
+                       // db.AddParameter("@MaterialName", MaterialName);
                         db.AddParameter("@Describe", Describe);
                         db.AddParameter("@Number", Number);
                         db.AddParameter("@Unit", Unit);
@@ -177,6 +195,8 @@ namespace PTHOrder.Class
                     else
                     {
                         OrderDetailCode =int.Parse(dtOrderDetail.Rows[i]["OrderDetailCode"].ToString());
+                        MaterialCode = dtOrderDetail.Rows[i]["MaterialCode"].ToString();
+                       // MaterialName = dtOrderDetail.Rows[i]["MaterialName"].ToString();
                         Describe = dtOrderDetail.Rows[i]["Describe"].ToString();
                         Number = int.Parse(dtOrderDetail.Rows[i]["Number"].ToString());
                         Unit = dtOrderDetail.Rows[i]["Unit"].ToString();
@@ -193,6 +213,8 @@ namespace PTHOrder.Class
                         db.CreateNewSqlCommand();
                         db.AddParameter("@OrderDetailCode", OrderDetailCode);
                         db.AddParameter("@Describe", Describe);
+                        db.AddParameter("@MaterialCode", MaterialCode);
+                       // db.AddParameter("@MaterialName", MaterialName);
                         db.AddParameter("@Number", Number);
                         db.AddParameter("@Unit", Unit);
                         db.AddParameter("@Price", Price);

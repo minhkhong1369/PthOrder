@@ -58,13 +58,16 @@ namespace PTHOrder.Forms
         void LoadListSupplier()
         {
             Class.clsListSupplier cls = new Class.clsListSupplier();
+            
             DataTable dt = cls.tbSupplier_GetList();
+            
             cboSupplier.Properties.DataSource = dt;
             cboSupplier.Properties.DisplayMember = "SupplierName";
             cboSupplier.Properties.ValueMember = "SupplierCode";
             //cboSupplier.EditValue = dt.Rows[0]["SupplierCode"];
         }
         DataTable dtOrderDetail = new DataTable();
+        
         DataTable dtOrderDetailTemp = new DataTable();//bang tam de luu du lieu can xoa tu bang OrderDetails khi chinh sua
         void LoadOrderDetails()
         {
@@ -377,8 +380,21 @@ namespace PTHOrder.Forms
            if (statusForm)
            {
                AutoOrderCode();
+               // Xử lý combolookup Mã vật tư trên Grid
+              
            }
-           
+           Class.clsMaterial cls = new Class.clsMaterial();
+           DataTable dt = cls.tbMaterial_GetList();
+           repMaterialCode.DisplayMember = "MaterialName";
+           repMaterialCode.ValueMember = "MaterialCode";
+           repMaterialCode.DataSource = dt;
+           repMaterialCode.PopulateColumns();
+           repMaterialCode.Columns["Images"].Visible = false;
+           repMaterialCode.Columns["Groups"].Visible = false;
+           repMaterialCode.Columns["Input"].Visible = false;
+           repMaterialCode.Columns["Output"].Visible = false;
+           repMaterialCode.Columns["Quota"].Visible = false;
+           repMaterialCode.Columns["Active"].Visible = false;
        }
        //tao cot ma don hang tu dong 
        void AutoOrderCode()
@@ -414,6 +430,8 @@ namespace PTHOrder.Forms
               
            }
        }
+
+     
 
        
 

@@ -55,16 +55,20 @@
             this.colSupplierName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridItem = new DevExpress.XtraGrid.GridControl();
             this.gridItemDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaterialCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repMaterialCode = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colDescribe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.colUnit = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonetize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrderCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSupplierSuggest = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrderDetailCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.cboFollowers = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cboCurrencyUnit = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -88,8 +92,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repMaterialCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboFollowers.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboCurrencyUnit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -308,7 +315,10 @@
             this.gridItem.Name = "gridItem";
             this.gridItem.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
-            this.repositoryItemCalcEdit1});
+            this.repositoryItemCalcEdit1,
+            this.repositoryItemComboBox1,
+            this.repositoryItemComboBox2,
+            this.repMaterialCode});
             this.gridItem.Size = new System.Drawing.Size(621, 199);
             this.gridItem.TabIndex = 9;
             this.gridItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -321,6 +331,7 @@
             this.gridItemDetail.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
             this.gridItemDetail.Appearance.TopNewRow.Options.UseFont = true;
             this.gridItemDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMaterialCode,
             this.colDescribe,
             this.colNumber,
             this.colUnit,
@@ -341,14 +352,31 @@
             this.gridItemDetail.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridItemDetail_ValidateRow);
             this.gridItemDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridItemDetail_KeyDown);
             // 
+            // colMaterialCode
+            // 
+            this.colMaterialCode.Caption = "Vật tư";
+            this.colMaterialCode.ColumnEdit = this.repMaterialCode;
+            this.colMaterialCode.FieldName = "MaterialCode";
+            this.colMaterialCode.Name = "colMaterialCode";
+            this.colMaterialCode.Visible = true;
+            this.colMaterialCode.VisibleIndex = 0;
+            this.colMaterialCode.Width = 65;
+            // 
+            // repMaterialCode
+            // 
+            this.repMaterialCode.AutoHeight = false;
+            this.repMaterialCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repMaterialCode.Name = "repMaterialCode";
+            // 
             // colDescribe
             // 
             this.colDescribe.Caption = "Mô tả";
             this.colDescribe.FieldName = "Describe";
             this.colDescribe.Name = "colDescribe";
             this.colDescribe.Visible = true;
-            this.colDescribe.VisibleIndex = 0;
-            this.colDescribe.Width = 138;
+            this.colDescribe.VisibleIndex = 1;
+            this.colDescribe.Width = 117;
             // 
             // colNumber
             // 
@@ -357,7 +385,7 @@
             this.colNumber.FieldName = "Number";
             this.colNumber.Name = "colNumber";
             this.colNumber.Visible = true;
-            this.colNumber.VisibleIndex = 1;
+            this.colNumber.VisibleIndex = 2;
             this.colNumber.Width = 57;
             // 
             // repositoryItemCalcEdit1
@@ -372,11 +400,19 @@
             // colUnit
             // 
             this.colUnit.Caption = "Đơn vị";
+            this.colUnit.ColumnEdit = this.repositoryItemComboBox2;
             this.colUnit.FieldName = "Unit";
             this.colUnit.Name = "colUnit";
             this.colUnit.Visible = true;
-            this.colUnit.VisibleIndex = 2;
+            this.colUnit.VisibleIndex = 3;
             this.colUnit.Width = 61;
+            // 
+            // repositoryItemComboBox2
+            // 
+            this.repositoryItemComboBox2.AutoHeight = false;
+            this.repositoryItemComboBox2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox2.Name = "repositoryItemComboBox2";
             // 
             // colPrice
             // 
@@ -385,7 +421,7 @@
             this.colPrice.FieldName = "Price";
             this.colPrice.Name = "colPrice";
             this.colPrice.Visible = true;
-            this.colPrice.VisibleIndex = 3;
+            this.colPrice.VisibleIndex = 4;
             this.colPrice.Width = 68;
             // 
             // colMonetize
@@ -396,7 +432,7 @@
             this.colMonetize.Name = "colMonetize";
             this.colMonetize.OptionsColumn.AllowEdit = false;
             this.colMonetize.Visible = true;
-            this.colMonetize.VisibleIndex = 4;
+            this.colMonetize.VisibleIndex = 5;
             this.colMonetize.Width = 85;
             // 
             // colOrderCode
@@ -411,7 +447,7 @@
             this.colSupplierSuggest.FieldName = "SupplierSuggest";
             this.colSupplierSuggest.Name = "colSupplierSuggest";
             this.colSupplierSuggest.Visible = true;
-            this.colSupplierSuggest.VisibleIndex = 5;
+            this.colSupplierSuggest.VisibleIndex = 6;
             this.colSupplierSuggest.Width = 149;
             // 
             // colOrderDetailCode
@@ -427,6 +463,13 @@
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             this.repositoryItemTextEdit1.ValidateOnEnterKey = true;
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
             // 
             // labelControl9
             // 
@@ -588,8 +631,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repMaterialCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboFollowers.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboCurrencyUnit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -649,5 +695,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaterialCode;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repMaterialCode;
     }
 }

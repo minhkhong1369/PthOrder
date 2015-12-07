@@ -60,7 +60,7 @@ namespace PTHOrder.Forms
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            waiting.ShowWaitForm();
+          
             if (gridItemDetail.FocusedRowHandle > -1)//duyệt từ dòng đầu tiên trên lưới
             {
                 string code = gridItemDetail.GetFocusedRowCellValue(colOrderCode).ToString();
@@ -81,7 +81,7 @@ namespace PTHOrder.Forms
                 }
 
             }
-            waiting.CloseWaitForm();
+          
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -162,6 +162,7 @@ namespace PTHOrder.Forms
                     dt.Columns.Add("SoHD");
                     dt.Columns.Add("NgayDN");
                     dt.Columns.Add("NhaCC");
+                    dt.Columns.Add("TenVatTu");
                     dt.Columns.Add("MoTa");
                     dt.Columns.Add("SoLuong");
                     dt.Columns.Add("DonVi");
@@ -187,6 +188,7 @@ namespace PTHOrder.Forms
                            
                             if (dtct.Rows.Count > 0)
                             {
+                                dr["TenVatTu"] = dtct.Rows[0]["MaterialName"].ToString();
                                 dr["MoTa"] = dtct.Rows[0]["Describe"].ToString();
                                 dr["SoLuong"] = dtct.Rows[0]["Number"].ToString();
                                 dr["DonVi"] = dtct.Rows[0]["Unit"].ToString();
@@ -201,6 +203,7 @@ namespace PTHOrder.Forms
                                 for (int ii = 1; ii < soct; ii++)
                                 {
                                     DataRow dr1 = dt.NewRow();
+                                    dr1["TenVatTu"] = dtct.Rows[ii]["MaterialName"].ToString();
                                     dr1["MoTa"] = dtct.Rows[ii]["Describe"].ToString();
                                     dr1["SoLuong"] = dtct.Rows[ii]["Number"].ToString();
                                     dr1["DonVi"] = dtct.Rows[ii]["Unit"].ToString();
@@ -237,12 +240,13 @@ namespace PTHOrder.Forms
                         xlWorkSheet.Cells[1, 1] = "Số HĐ";
                         xlWorkSheet.Cells[1, 2] = "Ngày đề nghị";
                         xlWorkSheet.Cells[1, 3] = "Nhà Cung cấp";
-                        xlWorkSheet.Cells[1, 4] = "Mô tả";
-                        xlWorkSheet.Cells[1, 5] = "Số lượng";
-                        xlWorkSheet.Cells[1, 6] = "Đơn vị tính";
-                        xlWorkSheet.Cells[1, 7] = "Đơn Giá";
-                        xlWorkSheet.Cells[1, 8] = "Thành tiền";
-                        xlWorkSheet.Cells[1, 9] = "VAT";
+                        xlWorkSheet.Cells[1, 4] = "Tên Vật tư";
+                        xlWorkSheet.Cells[1, 5] = "Mô tả";
+                        xlWorkSheet.Cells[1, 6] = "Số lượng";
+                        xlWorkSheet.Cells[1, 7] = "Đơn vị tính";
+                        xlWorkSheet.Cells[1, 8] = "Đơn Giá";
+                        xlWorkSheet.Cells[1, 9] = "Thành tiền";
+                        xlWorkSheet.Cells[1, 10] = "VAT";
 
                         object[,] Array_Record;
                         Array_Record = new object[dt.Rows.Count, dt.Columns.Count];
