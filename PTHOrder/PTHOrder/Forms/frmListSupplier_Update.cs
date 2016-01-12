@@ -12,6 +12,7 @@ namespace PTHOrder.Forms
     public partial class frmListSupplier_Update : DevExpress.XtraEditors.XtraForm
     {
         string lbstatus;
+        public bool save = false;
         public frmListSupplier_Update()
         {
             InitializeComponent();
@@ -89,7 +90,8 @@ namespace PTHOrder.Forms
                 cls.Note = txtNote.Text;
                 if (cls.Insert())
                 {
-                    MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
+                    MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    save = true;
                     //this.Close();
                 }
                 else
@@ -111,7 +113,8 @@ namespace PTHOrder.Forms
                 cls.Note = txtNote.Text;
                 if (cls.Update())
                 {
-                    MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
+                    MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    save = true;
                    // this.Close();
                 }
                 else
@@ -161,7 +164,8 @@ namespace PTHOrder.Forms
                             cls.Note = txtNote.Text;
                             if (cls.Insert())
                             {
-                                MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
+                                MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                save = true;
                                 this.Close();
                             }
                             else
@@ -182,7 +186,8 @@ namespace PTHOrder.Forms
                             cls.Note = txtNote.Text;
                             if (cls.Update())
                             {
-                                MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
+                                MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                save = true;
                                 this.Close();
                             }
                             else

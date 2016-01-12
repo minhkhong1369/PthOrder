@@ -36,7 +36,10 @@ namespace PTHOrder.Forms
             Forms.frmStore_Update frm = new frmStore_Update();
             //waiting.CloseWaitForm();
             frm.ShowDialog();
-            tbStore_Get();
+            if (frm.save)
+            {
+                tbStore_Get();
+            }
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -48,7 +51,10 @@ namespace PTHOrder.Forms
                 Forms.frmStore_Update frm = new frmStore_Update(code);
                // waiting.CloseWaitForm();
                 frm.ShowDialog();
-                tbStore_Get();
+                if (frm.save)
+                {
+                    tbStore_Get();
+                }
             }
         }
 

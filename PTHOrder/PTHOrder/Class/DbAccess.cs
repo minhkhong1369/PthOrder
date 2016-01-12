@@ -9,10 +9,10 @@ namespace PTHOrder.Class
 {
     public class DbConnection
     {        
-        public static string svr = "192.168.1.28";
+        public static string svr = "192.168.1.8";
         public static string db = "PTHOrder";
         public static string user = "sa";
-        public static string password = "sa";
+        public static string password = "Fast123456";
         private static SqlConnection _cnn = new SqlConnection(@"Data Source=" + svr + "; Initial Catalog=" + db + ";User ID=" + user + ";Password=" + password + "");
         public static SqlConnection SqlConnection
         {

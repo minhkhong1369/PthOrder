@@ -141,6 +141,8 @@
     <Reference Include="DevExpress.XtraReports.v12.2.Extensions, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -156,10 +158,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\App.cs" />
+    <Compile Include="Class\clsDistributionDetails.cs" />
     <Compile Include="Class\clsListOrder.cs" />
     <Compile Include="Class\clsListSupplier.cs" />
     <Compile Include="Class\clsLogin.cs" />
     <Compile Include="Class\clsMaterial.cs" />
+    <Compile Include="Class\clsMaterialDetails.cs" />
+    <Compile Include="Class\clsPlancs.cs" />
     <Compile Include="Class\clsStore.cs" />
     <Compile Include="Class\DbAccess.cs" />
     <Compile Include="Forms\frmChangepassword.cs">
@@ -209,6 +214,12 @@
     </Compile>
     <Compile Include="Forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMaterialDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMaterialDetails.Designer.cs">
+      <DependentUpon>frmMaterialDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmStore.cs">
       <SubType>Form</SubType>
@@ -272,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMaterialDetails.resx">
+      <DependentUpon>frmMaterialDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmStore.resx">
       <DependentUpon>frmStore.cs</DependentUpon>

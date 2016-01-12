@@ -35,7 +35,10 @@ namespace PTHOrder.Forms
             Forms.frmListSupplier_Update frm = new frmListSupplier_Update();
             waiting.CloseWaitForm();
             frm.ShowDialog();
-            tbSupplier_GetList();
+            if (frm.save)
+            {
+                tbSupplier_GetList();
+            }
            
         }
         //Xử lý nút xóa
@@ -85,12 +88,15 @@ namespace PTHOrder.Forms
             
             if (gridItemDetail.FocusedRowHandle > -1)
             {
-                waiting.ShowWaitForm(); 
+                //waiting.ShowWaitForm(); 
                 string code = gridItemDetail.GetFocusedRowCellValue(colSupplierCode).ToString();
                 Forms.frmListSupplier_Update frm = new frmListSupplier_Update(code);
-                waiting.CloseWaitForm();
+                //waiting.CloseWaitForm();
                 frm.ShowDialog();
-                tbSupplier_GetList();
+                if (frm.save)
+                {
+                    tbSupplier_GetList();
+                }
             }
             
         }

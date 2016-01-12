@@ -37,6 +37,14 @@ namespace PTHOrder.Class
             db.CreateNewSqlCommand();
             return db.ExecuteDataTable(procname);
         }
+        public DataTable tbOrderDetails_GetList()
+        {
+            string procname = "tbOrderDetails_GetList";
+            DbAccess db = new DbAccess();
+            db.CreateNewSqlCommand();
+            return db.ExecuteDataTable(procname);
+        }
+        
         //Store lấy dữ liệu table 
         public DataTable tbOrderDetails_GetByCode()
         {

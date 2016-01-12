@@ -16,6 +16,7 @@ namespace PTHOrder.Forms
     public partial class frmListOrder_Update : DevExpress.XtraEditors.XtraForm
     {
         string lbstatus;
+       public bool save = false;
         public frmListOrder_Update()
         {
             InitializeComponent();
@@ -137,7 +138,8 @@ namespace PTHOrder.Forms
                 }
                 if (cls.Insert(dtOrderDetail))
                 {
-                    MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
+                    MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    save = true;
                     this.Close();
                 }
                 else
@@ -159,7 +161,8 @@ namespace PTHOrder.Forms
                 cls.CurrencyUnit = cboCurrencyUnit.Text;
                 if (cls.Update(dtOrderDetail,dtOrderDetailTemp))
                 {
-                    MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
+                    MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    save = true;
                     this.Close();
                 }
                 else
@@ -223,7 +226,8 @@ namespace PTHOrder.Forms
                         }
                         if (cls.Insert(dtOrderDetail))
                         {
-                            MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
+                            MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            save = true;
                             AutoOrderCode();
                             //  this.Close();
                         }
@@ -250,6 +254,7 @@ namespace PTHOrder.Forms
                 {
                     MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                     AutoOrderCode();
+                    save = true;
                     //this.Close();
                 }
                 else

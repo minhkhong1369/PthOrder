@@ -41,47 +41,55 @@ namespace PTHOrder.Forms
             Forms.frmListOrder_Update frm = new frmListOrder_Update();
             waiting.CloseWaitForm();
             frm.ShowDialog();
-            tbOrder_GetList();
-           
+            if (frm.save)
+            {
+                tbOrder_GetList();
+            }
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            waiting.ShowWaitForm();
+           // waiting.ShowWaitForm();
             if (gridItemDetail.FocusedRowHandle > -1)
             {
                 string code = gridItemDetail.GetFocusedRowCellValue(colOrderCode).ToString();//lấy Ordercode từ vị trí trên grid
                 Forms.frmListOrder_Update frm = new frmListOrder_Update(code);
                 frm.ShowDialog();
-                tbOrder_GetList();
+                if (frm.save)
+                {
+                    tbOrder_GetList();
+                }                
             }
-            waiting.CloseWaitForm();
+           // waiting.CloseWaitForm();
         }
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            waiting.ShowWaitForm();
+
             if (gridItemDetail.FocusedRowHandle > -1)//duyệt từ dòng đầu tiên trên lưới
             {
                 string code = gridItemDetail.GetFocusedRowCellValue(colOrderCode).ToString();
                 Class.clsListOrder cls = new Class.clsListOrder();
                 cls.OrderCode = code;
-                if (MessageBox.Show("Bạn có chắc chắn muốn xoá hay không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    try
-                    {
-                        cls.Delete();
-                        MessageBox.Show("Xóa thành công");
-                        tbOrder_GetList();
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
+               
 
+                    if (MessageBox.Show("Bạn có chắc chắn muốn xoá hay không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            cls.Delete();
+                            MessageBox.Show("Xóa thành công");
+                            tbOrder_GetList();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+
+                
             }
-            waiting.CloseWaitForm();
+            
         }
 
         private void btn_Add_Click(object sender, EventArgs e)

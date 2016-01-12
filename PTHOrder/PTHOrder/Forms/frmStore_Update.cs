@@ -12,6 +12,7 @@ namespace PTHOrder.Forms
     public partial class frmStore_Update : DevExpress.XtraEditors.XtraForm
     {
         string lbstatus;
+        public bool save = false;
         public frmStore_Update()
         {
             InitializeComponent();
@@ -81,7 +82,7 @@ namespace PTHOrder.Forms
                 if (cls.Insert())
                 {
                     MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    save = true;
                     //this.Close();
                 }
                 else
@@ -102,7 +103,7 @@ namespace PTHOrder.Forms
                 if (cls.Update())
                 {
                     MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    save = true;
                     // this.Close();
                 }
                 else
@@ -189,7 +190,7 @@ namespace PTHOrder.Forms
                 if (cls.Update())
                 {
                     MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    save = true;
                     this.Close();
                 }
                 else
