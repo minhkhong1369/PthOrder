@@ -11,6 +11,7 @@ using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Columns;
 
+
 namespace PTHOrder.Forms
 {
     public partial class frmListOrder_Update : DevExpress.XtraEditors.XtraForm
@@ -393,7 +394,11 @@ namespace PTHOrder.Forms
            DataTable dt = cls.tbOrder_GetAutocode();
            if (dt.Rows.Count < 1)
            {
-               txtOrderCode.Text = DateTime.Now.Year + "-0001";
+               //string strOrderCode;
+               //string strCut;
+              // strOrderCode = DateTime.Now.Year.ToString();
+               //strCut =  strOrderCode.Substring(2, 2);
+               txtOrderCode.Text =  DateTime.Now.Year.ToString().Substring(2,2) + "-0001";
            }
            else
            {
@@ -402,19 +407,19 @@ namespace PTHOrder.Forms
                int number = int.Parse(codetemp);
                number++;
                if (number.ToString().Length == 3) {
-                   txtOrderCode.Text = DateTime.Now.Year + "-0" + number.ToString();
+                   txtOrderCode.Text = DateTime.Now.Year.ToString().Substring(2,2) + "-0" + number.ToString();
                }
                if (number.ToString().Length == 2)
                {
-                   txtOrderCode.Text = DateTime.Now.Year + "-00" + number.ToString();
+                   txtOrderCode.Text = DateTime.Now.Year.ToString().Substring(2, 2) + "-00" + number.ToString();
                }
                if (number.ToString().Length == 1)
                {
-                   txtOrderCode.Text = DateTime.Now.Year + "-000" + number.ToString();
+                   txtOrderCode.Text = DateTime.Now.Year.ToString().Substring(2, 2) + "-000" + number.ToString();
                }
                if (number.ToString().Length == 4)
                {
-                   txtOrderCode.Text = DateTime.Now.Year + "-" + number.ToString();
+                   txtOrderCode.Text = DateTime.Now.Year.ToString().Substring(2, 2) + "-" + number.ToString();
                }
               
            }

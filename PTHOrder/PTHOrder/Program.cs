@@ -20,7 +20,7 @@ namespace PTHOrder
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
 
-         // Application.Run(new frmMain());
+          //Application.Run(new frmMain());
               Application.Run(new frmMainPO());
              // Application.Run(new Forms.frmListOrder());
         }

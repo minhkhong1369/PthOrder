@@ -6,39 +6,40 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Views.Grid;
 using System.IO;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace PTHOrder.Forms
 {
-    public partial class frmStore : DevExpress.XtraEditors.XtraForm
+    public partial class frmListMaterial : DevExpress.XtraEditors.XtraForm
     {
-        public frmStore()
+        public frmListMaterial()
         {
             InitializeComponent();
         }
         //load Grid view
-        void tbStore_Get()
+        void tbMaterial_GetList()
         {
-            Class.clsStore cls = new Class.clsStore();
-            DataTable dt = cls.tbStore_GetList();
+            Class.clsMaterial cls = new Class.clsMaterial();
+            DataTable dt = cls.tbMaterial_GetList();
             gridItem.DataSource = dt;
 
         }
-        private void frmStore_Load(object sender, EventArgs e)
+
+        private void frmListMaterial_Load(object sender, EventArgs e)
         {
-            tbStore_Get();
+            tbMaterial_GetList();
         }
 
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           // waiting.ShowWaitForm();
-            Forms.frmStore_Update frm = new frmStore_Update();
+            // waiting.ShowWaitForm();
+            Forms.frmListMaterial_Update frm = new frmListMaterial_Update();
             //waiting.CloseWaitForm();
             frm.ShowDialog();
             if (frm.save)
             {
-                tbStore_Get();
+                tbMaterial_GetList();
             }
         }
 
@@ -47,13 +48,13 @@ namespace PTHOrder.Forms
             if (gridItemDetail.FocusedRowHandle > -1)
             {
                 //waiting.ShowWaitForm();
-                string code = gridItemDetail.GetFocusedRowCellValue(colStoreCode).ToString();
-                Forms.frmStore_Update frm = new frmStore_Update(code);
-               // waiting.CloseWaitForm();
+                string code = gridItemDetail.GetFocusedRowCellValue(colMaterialCode).ToString();
+                Forms.frmListMaterial_Update frm = new frmListMaterial_Update(code);
+                // waiting.CloseWaitForm();
                 frm.ShowDialog();
                 if (frm.save)
                 {
-                    tbStore_Get();
+                    tbMaterial_GetList();
                 }
             }
         }
@@ -63,16 +64,16 @@ namespace PTHOrder.Forms
             //waiting.ShowWaitForm();
             if (gridItemDetail.FocusedRowHandle > -1)//duyệt từ dòng đầu tiên trên lưới
             {
-                string code = gridItemDetail.GetFocusedRowCellValue(colStoreCode).ToString();
-                Class.clsStore cls = new Class.clsStore();
-                cls.StoreCode = code;
+                string code = gridItemDetail.GetFocusedRowCellValue(colMaterialCode).ToString();
+                Class.clsMaterial cls = new Class.clsMaterial();
+                cls.MaterialCode = code;
                 if (MessageBox.Show("Bạn có chắc chắn muốn xoá hay không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     try
                     {
                         cls.Delete();
                         MessageBox.Show("Xóa thành công");
-                        tbStore_Get();
+                        tbMaterial_GetList();
                     }
                     catch (Exception ex)
                     {
@@ -100,20 +101,6 @@ namespace PTHOrder.Forms
         private void gridItemDetail_DoubleClick(object sender, EventArgs e)
         {
             btn_Update_Click(null, null);
-
-        }
-        //tao cot stt tren grid
-        bool indicatorIcon = true;
-        private void gridItemDetail_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
-        {
-            GridView view = (GridView)sender;
-            //Check whether the indicator cell belongs to a data row
-            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
-            {
-                e.Info.DisplayText = (e.RowHandle + 1).ToString();
-                if (!indicatorIcon)
-                    e.Info.ImageIndex = -1;
-            }
         }
 
         private void btnExportFile_Click(object sender, EventArgs e)
@@ -170,15 +157,33 @@ namespace PTHOrder.Forms
                 }
             }
         }
+        //tao cot stt tren grid
+        bool indicatorIcon = true;
+        private void gridItemDetail_CustomDrawRowIndicator_1(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            GridView view = (GridView)sender;
+            //Check whether the indicator cell belongs to a data row
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+            {
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
+                if (!indicatorIcon)
+                    e.Info.ImageIndex = -1;
+            }
+        }
 
-        private void gridItemDetail_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        private void gridItemDetail_DoubleClick_1(object sender, EventArgs e)
+        {
+            btn_Update_Click(null,null);
+        }
+
+        private void gridItemDetail_FocusedRowChanged_1(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             try
             {
-                lblChoose.Text = "Đang chọn:[<b>" + gridItemDetail.GetFocusedRowCellValue(colStoreName).ToString() + "</b>]";
+                lblChoose.Text = "Đang chọn:[<b>" + gridItemDetail.GetFocusedRowCellValue(colMaterialName).ToString() + "</b>]";
             }
             catch { }
         }
-        
+   
     }
 }

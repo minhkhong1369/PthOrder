@@ -50,6 +50,7 @@ namespace PTHOrder.Forms
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
            // waiting.ShowWaitForm();
+            
             if (gridItemDetail.FocusedRowHandle > -1)
             {
                 string code = gridItemDetail.GetFocusedRowCellValue(colOrderCode).ToString();//lấy Ordercode từ vị trí trên grid
@@ -518,7 +519,11 @@ namespace PTHOrder.Forms
 
             private void gridItemDetail_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
             {
-                lblChoose.Text = "Đang chọn:[<b>" + gridItemDetail.GetFocusedRowCellValue(colOrderCode).ToString() + "</b>]";
+                try
+                {
+                    lblChoose.Text = "Đang chọn:[<b>" + gridItemDetail.GetFocusedRowCellValue(colOrderCode).ToString() + "</b>]";
+                }
+                catch { }
             }
           }          
  }
