@@ -504,7 +504,7 @@
             // xrTableCell12
             // 
             this.xrTableCell12.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Price", "{0:#.#}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Price", "{0:#,#}")});
             this.xrTableCell12.Name = "xrTableCell12";
             this.xrTableCell12.StylePriority.UseTextAlignment = false;
             this.xrTableCell12.Text = "xrTableCell5";
@@ -514,7 +514,7 @@
             // xrTableCell13
             // 
             this.xrTableCell13.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Monetize", "{0:#.#}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Monetize", "{0:#,#}")});
             this.xrTableCell13.Name = "xrTableCell13";
             this.xrTableCell13.StylePriority.UseTextAlignment = false;
             this.xrTableCell13.Text = "xrTableCell7";
@@ -549,7 +549,7 @@
             this.label3.LocationFloat = new DevExpress.Utils.PointFloat(530.1458F, 303.7502F);
             this.label3.Name = "label3";
             this.label3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.label3.SizeF = new System.Drawing.SizeF(150.8477F, 23F);
+            this.label3.SizeF = new System.Drawing.SizeF(165.8542F, 23F);
             this.label3.Text = "label3";
             // 
             // xrTableCell40
@@ -682,7 +682,7 @@
             // xrTableCell34
             // 
             this.xrTableCell34.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SubTotalAll", "{0:#.#}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SubTotalAll", "{0:#,#}")});
             this.xrTableCell34.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell34.Name = "xrTableCell34";
             this.xrTableCell34.StylePriority.UseFont = false;
@@ -775,7 +775,7 @@
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 76F;
+            this.BottomMargin.HeightF = 8.749993F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -810,7 +810,7 @@
             // xrTableCell20
             // 
             this.xrTableCell20.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SubTotal", "{0:#.#}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SubTotal", "{0:#,#}")});
             this.xrTableCell20.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell20.Name = "xrTableCell20";
             this.xrTableCell20.StylePriority.UseFont = false;
@@ -1178,7 +1178,7 @@
             this.richText9,
             this.richText8,
             this.richText7});
-            this.TopMargin.HeightF = 397F;
+            this.TopMargin.HeightF = 403.8823F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -1299,7 +1299,7 @@
             this.BottomMargin,
             this.ReportFooter,
             this.PageFooter});
-            this.Margins = new System.Drawing.Printing.Margins(88, 56, 397, 76);
+            this.Margins = new System.Drawing.Printing.Margins(88, 56, 404, 9);
             this.Version = "12.2";
             ((System.ComponentModel.ISupportInitialize)(this.richText1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrRichText30)).EndInit();

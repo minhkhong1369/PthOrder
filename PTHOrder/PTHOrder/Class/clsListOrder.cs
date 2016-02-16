@@ -79,6 +79,14 @@ namespace PTHOrder.Class
             db.AddParameter("@OrderCode", OrderCode);
             return db.ExecuteDataTable(procname);
         }
+        public DataTable tbOrderDetails_FindOrder()
+        {
+            string procname = "tbOrderDetails_FindOrder";
+            DbAccess db = new DbAccess();
+            db.CreateNewSqlCommand();
+            db.AddParameter("@Describe", Describe);
+            return db.ExecuteDataTable(procname);
+        }
         //store chèn dữ liệu vào table
         public bool Insert(DataTable dtOrderDetail)
         {
@@ -159,6 +167,7 @@ namespace PTHOrder.Class
                 {
                     if (dtOrderDetail.Rows[i]["OrderDetailCode"] == DBNull.Value)//dua vao OrderDetailCode de them or sua
                     {
+                        
                         Describe = dtOrderDetail.Rows[i]["Describe"].ToString();
                         Number = int.Parse(dtOrderDetail.Rows[i]["Number"].ToString());
                         Unit = dtOrderDetail.Rows[i]["Unit"].ToString();
@@ -200,6 +209,7 @@ namespace PTHOrder.Class
                         SupplierSuggest = dtOrderDetail.Rows[i]["SupplierSuggest"].ToString();
                         db.CreateNewSqlCommand();
                         db.AddParameter("@OrderDetailCode", OrderDetailCode);
+                        //db.AddParameter("@OrderCode", OrderCode);
                         db.AddParameter("@Describe", Describe);
                         db.AddParameter("@Number", Number);
                         db.AddParameter("@Unit", Unit);

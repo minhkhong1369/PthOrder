@@ -42,7 +42,7 @@ namespace PTHOrder.Forms
             cls.OrderCode = code;
             DataTable dt = cls.tbOrder_Get();
             if (dt.Rows.Count > 0) {
-                txtOrderCode.Enabled = false;
+               // txtOrderCode.Enabled = false;
                 txtOrderCode.Text = dt.Rows[0]["OrderCode"].ToString();                
                 dateSuggestDate.DateTime = (DateTime)dt.Rows[0]["DateSuggest"];
                 cboFollowers.Text = dt.Rows[0]["Followers"].ToString();               
@@ -135,7 +135,11 @@ namespace PTHOrder.Forms
                 }
                 else
                 {
-                    cls.VAT = int.Parse(txtVAT.EditValue.ToString());
+                    try
+                    {
+                        cls.VAT = int.Parse(txtVAT.EditValue.ToString());
+                    }
+                    catch { }
                 }
                 if (cls.Insert(dtOrderDetail))
                 {
@@ -394,10 +398,7 @@ namespace PTHOrder.Forms
            DataTable dt = cls.tbOrder_GetAutocode();
            if (dt.Rows.Count < 1)
            {
-               //string strOrderCode;
-               //string strCut;
-              // strOrderCode = DateTime.Now.Year.ToString();
-               //strCut =  strOrderCode.Substring(2, 2);
+               
                txtOrderCode.Text =  DateTime.Now.Year.ToString().Substring(2,2) + "-0001";
            }
            else
@@ -424,6 +425,8 @@ namespace PTHOrder.Forms
               
            }
        }
+
+    
 
        
 

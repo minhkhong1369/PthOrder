@@ -382,6 +382,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ModelEditor_EditModel_48x48.ico" />
+    <None Include="Resources\Action_Printing_Preview1.png" />
+    <None Include="Resources\Action_Printing_Preview_32x32.png" />
+    <None Include="Resources\Action_Printing_Preview.png" />
     <None Include="Resources\PTH_color2.png" />
     <None Include="Resources\PTH_color.png" />
     <None Include="Resources\PTH_color1.png" />

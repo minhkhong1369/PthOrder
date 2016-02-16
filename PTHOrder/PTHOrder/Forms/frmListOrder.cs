@@ -23,10 +23,11 @@ namespace PTHOrder.Forms
 
       
         //load Grid view
+        public static DataTable dt;
         void tbOrder_GetList()
         {
             Class.clsListOrder cls = new Class.clsListOrder();
-            DataTable dt = cls.tbOrder_GetList();
+             dt = cls.tbOrder_GetList();
             gridItem.DataSource = dt;
 
         }
@@ -307,7 +308,7 @@ namespace PTHOrder.Forms
             {
                 string code = gridItemDetail.GetFocusedRowCellValue(colOrderCode).ToString();//lấy Ordercode từ vị trí trên grid
                 // Create a report. 
-                Reports.rptListOrder report = new Reports.rptListOrder();
+                Reports.rptListOrder report = null;
                 Class.clsListOrder cls = new Class.clsListOrder();
                 cls.OrderCode=code;
                 DataTable dt = cls.tbOrderReport_GetByCode();
@@ -323,7 +324,7 @@ namespace PTHOrder.Forms
                 dt.Columns.Add("SubTotalByWord");
                 dt.Columns.Add("SubTotal_VAT", typeof(Double));
                 bool tienusd = false;
-                string txt = "";
+
                 Double _SubTotal = 0;
                 Double _vat = Double.Parse(dt.Rows[0]["VAT"].ToString());
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -333,27 +334,32 @@ namespace PTHOrder.Forms
 
                 }
                 /// kiem tra tien le
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    txt = dt.Rows[0]["Monetize"].ToString(); //_TongTienAll.ToString("F");
-                    if (txt.EndsWith(".00"))
-                    {
-                        tienusd = false;
-                    }
-                    else if (txt.IndexOf('.') < 0)
-                    {
-                        tienusd = false;
-                    }
-                    else if (txt == "0.0000")
-                    {
-                        tienusd = false;
-                    }
-                    else
-                    {
-                        tienusd = true;
-                        break;
-                    }
-                }
+                //for (int i = 0; i < dt.Rows.Count; i++)
+                //{
+                //    txt = dt.Rows[0]["Monetize"].ToString(); //_TongTienAll.ToString("F");
+                //    if (txt.EndsWith(".00"))
+                //    {
+                //        tienusd = false;
+                //    }
+                //    else if (txt.IndexOf('.') < 0)
+                //    {
+                //        tienusd = false;
+                //    }
+                //    else if (txt == "0.0000")
+                //    {
+                //        tienusd = false;
+                //    }
+                //    else
+                //    {
+                //        tienusd = true;
+                //        break;
+                //    }
+                //}
+                if (dt.Rows[0]["CurrencyUnit"].ToString() == "USD")
+                    tienusd = true;
+                else
+                    tienusd = false;
+
 
                 Double _SubTotalAll = _SubTotal + (_SubTotal * _vat) / 100;
                 string _MoneyByWord = SwitchToNumber(_SubTotalAll.ToString("F0")) + "đồng";
@@ -361,20 +367,19 @@ namespace PTHOrder.Forms
 
                 if (tienusd)
                     _MoneyByWord = "";
-                if (txt == "0.0000")
-                    _MoneyByWord = "";
+                //if (txt == "0.0000")
+                //    _MoneyByWord = "";
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     dt.Rows[i]["SubTotal"] = _SubTotal;
                     dt.Rows[i]["SubTotalAll"] = _SubTotalAll;
                     dt.Rows[i]["SubTotalByWord"] = _MoneyByWord;
                     dt.Rows[i]["SubTotal_VAT"] = _SubTotal_VAT;
-                }
-                
+                }               
                 if (tienusd)
                     report= new Reports.rptListOrder("usd");
                 else
-                    report = new Reports.rptListOrder();
+                    report = new Reports.rptListOrder("");
                 report.DataSource = dt;
                 // Show the report's preview.;
                 // ReportPrintTool tool = new ReportPrintTool(report);
@@ -387,7 +392,6 @@ namespace PTHOrder.Forms
             {
                 try
                 {
-
                     string[] dv = { "", "mươi", "trăm", "ngàn", "triệu", "tỉ" };
                     string[] cs = { "không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín" };
                     string doc;
@@ -399,7 +403,6 @@ namespace PTHOrder.Forms
                     found = 0;
                     ddv = 0;
                     rd = 0;
-
                     i = 0;
                     while (i < len)
                     {
@@ -416,7 +419,6 @@ namespace PTHOrder.Forms
                                 break;
                             }
                         }
-
                         //Duyet n chu so
                         if (found == 1)
                         {
@@ -470,8 +472,6 @@ namespace PTHOrder.Forms
                                 }
                             }
                         }
-
-
                         //Doc don vi lon
                         if (len - i - n > 0)
                         {

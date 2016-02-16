@@ -113,6 +113,36 @@ namespace PTHOrder.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Action_Printing_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Action_Printing_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Action_Printing_Preview_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Action_Printing_Preview_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Action_Printing_Preview1 {
+            get {
+                object obj = ResourceManager.GetObject("Action_Printing_Preview1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Action_Printing_Print {
             get {
                 object obj = ResourceManager.GetObject("Action_Printing_Print", resourceCulture);

@@ -170,7 +170,6 @@
             // 
             this.txtOrderCode.Location = new System.Drawing.Point(151, 53);
             this.txtOrderCode.Name = "txtOrderCode";
-            this.txtOrderCode.Properties.ReadOnly = true;
             this.txtOrderCode.Size = new System.Drawing.Size(277, 20);
             this.txtOrderCode.TabIndex = 1;
             // 
@@ -194,7 +193,7 @@
             this.txtVAT.Location = new System.Drawing.Point(151, 238);
             this.txtVAT.Name = "txtVAT";
             this.txtVAT.Size = new System.Drawing.Size(28, 20);
-            this.txtVAT.TabIndex = 8;
+            this.txtVAT.TabIndex = 9;
             this.txtVAT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVAT_KeyPress);
             // 
             // btnSave
@@ -316,7 +315,7 @@
             this.repositoryItemComboBox1,
             this.repositoryItemComboBox2});
             this.gridItem.Size = new System.Drawing.Size(621, 199);
-            this.gridItem.TabIndex = 9;
+            this.gridItem.TabIndex = 10;
             this.gridItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridItemDetail});
             // 
@@ -466,9 +465,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboFollowers.Properties.Items.AddRange(new object[] {
             "Nguyễn Thị Thu Thương",
-            "Nguyễn Thị Mười"});
+            "Nguyễn Thị Mười",
+            "Hà Thị Thủy"});
             this.cboFollowers.Size = new System.Drawing.Size(277, 20);
-            this.cboFollowers.TabIndex = 16;
+            this.cboFollowers.TabIndex = 3;
             // 
             // cboCurrencyUnit
             // 
@@ -482,7 +482,7 @@
             "VNĐ",
             "USD"});
             this.cboCurrencyUnit.Size = new System.Drawing.Size(85, 20);
-            this.cboCurrencyUnit.TabIndex = 17;
+            this.cboCurrencyUnit.TabIndex = 8;
             // 
             // labelControl10
             // 

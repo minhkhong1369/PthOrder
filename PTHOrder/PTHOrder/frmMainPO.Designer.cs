@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainPO));
             this.pControls = new DevExpress.XtraEditors.PanelControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
@@ -36,20 +37,26 @@
             this.btnSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.btnMaterial = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroupControlContainer1 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
+            this.btnFindOrder = new DevExpress.XtraEditors.ButtonEdit();
+            this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.btnListOrder = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.btnMaterialDetails = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.btnChangePass = new DevExpress.XtraNavBar.NavBarItem();
+            this.btnLogIn = new DevExpress.XtraNavBar.NavBarItem();
+            this.btnLogOut = new DevExpress.XtraNavBar.NavBarItem();
             this.imageLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.Waiting = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::PTHOrder.frmWaiting), true, true);
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.defaultStyle = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btnLogIn = new DevExpress.XtraNavBar.NavBarItem();
-            this.btnLogOut = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.pControls)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
+            this.navBarControl1.SuspendLayout();
+            this.navBarGroupControlContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFindOrder.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +76,9 @@
             this.navBarControl1.ActiveGroup = this.navBarGroup1;
             this.navBarControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
+            this.navBarControl1.Controls.Add(this.navBarGroupControlContainer1);
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.navBarGroup5,
             this.navBarGroup1,
             this.navBarGroup2,
             this.navBarGroup3,
@@ -84,10 +93,10 @@
             this.btnLogIn,
             this.btnLogOut});
             this.navBarControl1.LargeImages = this.imageLarge;
-            this.navBarControl1.Location = new System.Drawing.Point(0, 103);
+            this.navBarControl1.Location = new System.Drawing.Point(2, 87);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 162;
-            this.navBarControl1.Size = new System.Drawing.Size(162, 269);
+            this.navBarControl1.Size = new System.Drawing.Size(162, 290);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -124,6 +133,33 @@
             this.navBarItem2.Name = "navBarItem2";
             this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
             // 
+            // navBarGroupControlContainer1
+            // 
+            this.navBarGroupControlContainer1.Controls.Add(this.btnFindOrder);
+            this.navBarGroupControlContainer1.Name = "navBarGroupControlContainer1";
+            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(154, 26);
+            this.navBarGroupControlContainer1.TabIndex = 0;
+            // 
+            // btnFindOrder
+            // 
+            this.btnFindOrder.Location = new System.Drawing.Point(1, 1);
+            this.btnFindOrder.Name = "btnFindOrder";
+            this.btnFindOrder.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::PTHOrder.Properties.Resources.Action_Printing_Preview1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            this.btnFindOrder.Size = new System.Drawing.Size(155, 22);
+            this.btnFindOrder.TabIndex = 4;
+            this.btnFindOrder.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnFindOrder_ButtonClick);
+            // 
+            // navBarGroup5
+            // 
+            this.navBarGroup5.Caption = "Tìm nhanh";
+            this.navBarGroup5.ControlContainer = this.navBarGroupControlContainer1;
+            this.navBarGroup5.Expanded = true;
+            this.navBarGroup5.GroupClientHeight = 33;
+            this.navBarGroup5.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
+            this.navBarGroup5.LargeImage = global::PTHOrder.Properties.Resources.Action_Printing_Preview_32x32;
+            this.navBarGroup5.Name = "navBarGroup5";
+            // 
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "Quản lý đơn hàng";
@@ -143,7 +179,6 @@
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Quản lý kho";
-            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsText;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnMaterialDetails)});
@@ -159,7 +194,6 @@
             // navBarGroup4
             // 
             this.navBarGroup4.Caption = "Quản lý tài khoản";
-            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsText;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnChangePass),
@@ -173,6 +207,20 @@
             this.btnChangePass.LargeImageIndex = 1;
             this.btnChangePass.Name = "btnChangePass";
             this.btnChangePass.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnChangePass_LinkClicked);
+            // 
+            // btnLogIn
+            // 
+            this.btnLogIn.Caption = "Đăng nhập";
+            this.btnLogIn.LargeImageIndex = 4;
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnLogIn_LinkClicked);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Caption = "Đăng xuất";
+            this.btnLogOut.LargeImageIndex = 0;
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnLogOut_LinkClicked);
             // 
             // imageLarge
             // 
@@ -199,22 +247,8 @@
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Size = new System.Drawing.Size(113, 81);
+            this.pictureEdit1.Size = new System.Drawing.Size(113, 77);
             this.pictureEdit1.TabIndex = 2;
-            // 
-            // btnLogIn
-            // 
-            this.btnLogIn.Caption = "Đăng nhập";
-            this.btnLogIn.LargeImageIndex = 4;
-            this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnLogIn_LinkClicked);
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Caption = "Đăng xuất";
-            this.btnLogOut.LargeImageIndex = 0;
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnLogOut_LinkClicked);
             // 
             // frmMainPO
             // 
@@ -231,6 +265,9 @@
             this.Load += new System.EventHandler(this.frmMainPO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pControls)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
+            this.navBarControl1.ResumeLayout(false);
+            this.navBarGroupControlContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnFindOrder.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageLarge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -256,6 +293,9 @@
         private DevExpress.XtraNavBar.NavBarItem btnChangePass;
         private DevExpress.XtraNavBar.NavBarItem btnLogIn;
         private DevExpress.XtraNavBar.NavBarItem btnLogOut;
+        private DevExpress.XtraEditors.ButtonEdit btnFindOrder;
+        private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer1;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup5;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
     }
 }

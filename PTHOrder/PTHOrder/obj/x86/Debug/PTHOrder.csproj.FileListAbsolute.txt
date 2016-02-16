@@ -338,7 +338,6 @@ D:\Github\PthOrder\PTHOrder\PTHOrder\bin\x86\Debug\de\DevExpress.XtraReports.v12
 D:\Github\PthOrder\PTHOrder\PTHOrder\bin\x86\Debug\es\DevExpress.XtraReports.v12.2.Extensions.resources.dll
 D:\Github\PthOrder\PTHOrder\PTHOrder\bin\x86\Debug\ja\DevExpress.XtraReports.v12.2.Extensions.resources.dll
 D:\Github\PthOrder\PTHOrder\PTHOrder\bin\x86\Debug\ru\DevExpress.XtraReports.v12.2.Extensions.resources.dll
-D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.csprojResolveAssemblyReference.cache
 D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\Interop.ExcelAdaptorLib.dll
 D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.csproj.ResolveComReference.cache
 D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.Forms.frmChangepassword.resources

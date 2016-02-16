@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars.Helpers;
 using DevExpress.Skins;
-
+using PTHOrder.Class;
 namespace PTHOrder
 {
     public partial class frmMainPO : DevExpress.XtraEditors.XtraForm
@@ -23,7 +23,7 @@ namespace PTHOrder
         {
             for (int i = 0; i < pControls.Controls.Count; i++)
             {
-                if (pControls.Controls[i].Text == frmForm)
+                if (pControls.Controls[i].Name == frmForm)
                 {
                     pControls.Controls[i].Show();
                     return true;
@@ -156,6 +156,50 @@ namespace PTHOrder
                 frm.Show();
             }
             Waiting.CloseWaitForm();
+        }
+        //Tim kiem đơn hàng dựa theo mo ta don dat hang
+       
+        private void btnFindOrder_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (_checkControl("frmListOrder"))
+            {          
+
+                if (btnFindOrder.Text.Length > 0)
+                {
+                    Class.clsListOrder cls =new Class.clsListOrder();                    
+                    DataTable dtct = new DataTable();
+                    cls.Describe = btnFindOrder.Text;
+                    dtct=cls.tbOrderDetails_FindOrder();
+                    if (dtct.Rows.Count > 0)
+                    {
+                        string Filter = "";
+                        for (int i = 0; i < dtct.Rows.Count; i++)
+                        {
+                            Filter += "OrderCode = '" + dtct.Rows[i]["OrderCode"].ToString() + "'";
+                            if (i < dtct.Rows.Count - 1)
+                            {
+                                Filter += " OR ";
+                            }
+                        }
+                        DataView dv = new DataView();
+                        dv = Forms.frmListOrder.dt.DefaultView;
+                        dv.RowFilter = Filter;
+                    }
+                    else
+                    {
+                        DataView dv = new DataView();
+                        dv = Forms.frmListOrder.dt.DefaultView;
+                        dv.RowFilter = "OrderCode='kjhadsfjds'";
+                    }
+
+                }
+                else
+                {
+                    DataView dv = new DataView();
+                    dv = Forms.frmListOrder.dt.DefaultView;
+                    dv.RowFilter = "";
+                }
+        }
         }
 
        
