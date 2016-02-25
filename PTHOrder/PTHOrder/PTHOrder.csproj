@@ -166,7 +166,10 @@
     <Compile Include="Class\clsMaterialDetails.cs" />
     <Compile Include="Class\clsPlancs.cs" />
     <Compile Include="Class\clsStore.cs" />
+    <Compile Include="Class\CurrencyTranslator.cs" />
     <Compile Include="Class\DbAccess.cs" />
+    <Compile Include="Class\NumberToText.cs" />
+    <Compile Include="Class\NumberToText2.cs" />
     <Compile Include="Forms\frmChangepassword.cs">
       <SubType>Form</SubType>
     </Compile>

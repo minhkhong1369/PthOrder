@@ -11,7 +11,6 @@ using DevExpress.XtraReports.UI;
 using Excel = Microsoft.Office.Interop.Excel;
 using DevExpress.XtraGrid.Views.Grid;
 
-
 namespace PTHOrder.Forms
 {
     public partial class frmListOrder : DevExpress.XtraEditors.XtraForm
@@ -310,6 +309,8 @@ namespace PTHOrder.Forms
                 // Create a report. 
                 Reports.rptListOrder report = null;
                 Class.clsListOrder cls = new Class.clsListOrder();
+                Class.NumberToText clsNB = new Class.NumberToText();
+               
                 cls.OrderCode=code;
                 DataTable dt = cls.tbOrderReport_GetByCode();
                 
@@ -358,15 +359,24 @@ namespace PTHOrder.Forms
                 if (dt.Rows[0]["CurrencyUnit"].ToString() == "USD")
                     tienusd = true;
                 else
+                
                     tienusd = false;
 
 
-                Double _SubTotalAll = _SubTotal + (_SubTotal * _vat) / 100;
-                string _MoneyByWord = SwitchToNumber(_SubTotalAll.ToString("F0")) + "đồng";
-                Double _SubTotal_VAT = (_SubTotal * _vat) / 100;
+                    Double _SubTotalAll = _SubTotal + (_SubTotal * _vat) / 100;
+                    
+                    Double _SubTotal_VAT = (_SubTotal * _vat) / 100;
+                    string _MoneyByWord;
 
+                    Class.CurrencyTranslator tran = new Class.CurrencyTranslator();
                 if (tienusd)
-                    _MoneyByWord = "";
+                    //_MoneyByWord = "";
+
+                   // _MoneyByWord = clsNB.Convert(Double.Parse(_SubTotalAll.ToString())) + " dollar";
+                    _MoneyByWord = "US Dollars " + tran.TranslateCurrency(decimal.Parse(_SubTotalAll.ToString())) + " Only";
+                else
+                    _MoneyByWord = SwitchToNumber(_SubTotalAll.ToString("F0")) + "đồng";
+
                 //if (txt == "0.0000")
                 //    _MoneyByWord = "";
                 for (int i = 0; i < dt.Rows.Count; i++)

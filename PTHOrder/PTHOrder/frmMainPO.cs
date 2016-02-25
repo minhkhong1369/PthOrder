@@ -66,7 +66,7 @@ namespace PTHOrder
             Class.App.UserLogin = null;
             btnLogIn_LinkClicked(null, null);
         }
-
+        
         private void btnChangePass_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Waiting.ShowWaitForm();
@@ -201,7 +201,7 @@ namespace PTHOrder
                 }
         }
         }
-
+        
        
 
         

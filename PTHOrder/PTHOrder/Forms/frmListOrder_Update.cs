@@ -161,8 +161,12 @@ namespace PTHOrder.Forms
                 cls.SupplierCode = cboSupplier.EditValue.ToString();
                 cls.DeliveryDate = dateDeliveryDate.DateTime;
                 cls.PlaceOfDelivery = txtPlaceOfDelivery.Text;
-                cls.PaymentConditions = txtPaymentConditions.Text;              
-                cls.VAT = int.Parse(txtVAT.EditValue.ToString());
+                cls.PaymentConditions = txtPaymentConditions.Text;
+                try
+                {
+                    cls.VAT = int.Parse(txtVAT.EditValue.ToString());
+                }
+                catch { }
                 cls.CurrencyUnit = cboCurrencyUnit.Text;
                 if (cls.Update(dtOrderDetail,dtOrderDetailTemp))
                 {
@@ -253,7 +257,11 @@ namespace PTHOrder.Forms
                 cls.DeliveryDate = dateDeliveryDate.DateTime;
                 cls.PlaceOfDelivery = txtPlaceOfDelivery.Text;
                 cls.PaymentConditions = txtPaymentConditions.Text;
-                cls.VAT = int.Parse(txtVAT.EditValue.ToString());
+                try
+                {
+                    cls.VAT = int.Parse(txtVAT.EditValue.ToString());
+                }
+                catch { }
                 cls.CurrencyUnit = cboCurrencyUnit.Text;
                 if (cls.Update(dtOrderDetail,dtOrderDetailTemp))
                 {

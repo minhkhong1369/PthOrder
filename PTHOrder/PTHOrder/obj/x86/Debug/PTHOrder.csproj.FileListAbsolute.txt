@@ -360,3 +360,4 @@ D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.csproj.GenerateResou
 D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.exe.licenses
 D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.exe
 D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.pdb
+D:\Github\PthOrder\PTHOrder\PTHOrder\obj\x86\Debug\PTHOrder.csprojResolveAssemblyReference.cache
