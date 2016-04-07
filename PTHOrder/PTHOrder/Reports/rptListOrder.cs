@@ -25,11 +25,7 @@ namespace PTHOrder.Reports
             }
             else
             {
-                //xrTableCell12.DataBindings.Add("Text", null, "Table.Price", "{0:#,#}");
-                //xrTableCell13.DataBindings.Add("Text", null, "Table.Monitize", "{0:#,#}");
-                //xrTableCell20.DataBindings.Add("Text", null, "Table.SupTotal", "{0:#,#}");
-                //xrTableCell34.DataBindings.Add("Text", null, "Table.SupTotalAll", "{0:#,#}");
-                //xrTableCell27.DataBindings.Add("Text", null, "Table.SupTotal_VAT", "{0:#,#}");
+                
             }
         }
     }

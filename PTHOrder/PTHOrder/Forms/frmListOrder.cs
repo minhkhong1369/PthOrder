@@ -307,7 +307,7 @@ namespace PTHOrder.Forms
             {
                 string code = gridItemDetail.GetFocusedRowCellValue(colOrderCode).ToString();//lấy Ordercode từ vị trí trên grid
                 // Create a report. 
-                Reports.rptListOrder report = null;
+                
                 Class.clsListOrder cls = new Class.clsListOrder();
                 Class.NumberToText clsNB = new Class.NumberToText();
                
@@ -385,17 +385,30 @@ namespace PTHOrder.Forms
                     dt.Rows[i]["SubTotalAll"] = _SubTotalAll;
                     dt.Rows[i]["SubTotalByWord"] = _MoneyByWord;
                     dt.Rows[i]["SubTotal_VAT"] = _SubTotal_VAT;
-                }               
-                if (tienusd)
-                    report= new Reports.rptListOrder("usd");
+                }
+                //In report font nho
+                if (dt.Rows.Count > 7)
+                {
+                    Reports.rptListOrder_Font report = null;
+                    if (tienusd)
+                        report = new Reports.rptListOrder_Font("usd");
+                    else
+                        report = new Reports.rptListOrder_Font("");
+
+                    report.DataSource = dt;
+                    report.ShowPreview();
+                }
                 else
-                    report = new Reports.rptListOrder("");
-                report.DataSource = dt;
-                // Show the report's preview.;
-                // ReportPrintTool tool = new ReportPrintTool(report);
-                // tool.ShowPreview();
-                report.ShowPreview();
-                 //report.ShowDesigner();
+                {
+                    Reports.rptListOrder report = null;
+                    if (tienusd)
+                        report = new Reports.rptListOrder("usd");
+                    else
+                        report = new Reports.rptListOrder("");
+                    report.DataSource = dt;
+                    report.ShowPreview();
+                }
+              
             }
         }
             private string SwitchToNumber(string number)

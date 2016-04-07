@@ -412,7 +412,7 @@ namespace PTHOrder.Forms
            else
            {
                string txt = dt.Rows[dt.Rows.Count - 1]["OrderCode"].ToString();
-               string codetemp = txt.Substring(5);
+               string codetemp = txt.Substring(3);
                int number = int.Parse(codetemp);
                number++;
                if (number.ToString().Length == 3) {
